@@ -1,0 +1,196 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050816;
+  --foreground: #f8fafc;
+
+  --panel: rgba(9, 14, 28, 0.68);
+  --panel-strong: rgba(8, 12, 24, 0.92);
+  --panel-border: rgba(125, 211, 252, 0.16);
+
+  --cyan: #38bdf8;
+  --blue: #60a5fa;
+  --emerald: #34d399;
+  --white-soft: rgba(255, 255, 255, 0.82);
+
+  --glow-cyan: 0 0 30px rgba(56, 189, 248, 0.18);
+  --glow-blue: 0 0 40px rgba(96, 165, 250, 0.16);
+  --glow-emerald: 0 0 30px rgba(52, 211, 153, 0.14);
+
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top, rgba(56, 189, 248, 0.08), transparent 30%),
+    radial-gradient(circle at 85% 20%, rgba(52, 211, 153, 0.06), transparent 20%),
+    linear-gradient(to bottom, #04070f, #050816, #02040a);
+  color: var(--foreground);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-space-grotesk), Arial, Helvetica, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(56, 189, 248, 0.24);
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, rgba(56, 189, 248, 0.5), rgba(96, 165, 250, 0.45));
+  border-radius: 999px;
+  border: 2px solid #030712;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, rgba(56, 189, 248, 0.75), rgba(96, 165, 250, 0.7));
+}
+
+.glass-panel {
+  background: var(--panel);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--panel-border);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 10px 30px rgba(0, 0, 0, 0.28),
+    var(--glow-cyan);
+  border-radius: var(--radius-xl);
+}
+
+.glass-panel-strong {
+  background: var(--panel-strong);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid rgba(96, 165, 250, 0.18);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 18px 40px rgba(0, 0, 0, 0.35),
+    var(--glow-blue);
+  border-radius: var(--radius-2xl);
+}
+
+.panel-outline {
+  position: relative;
+}
+
+.panel-outline::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(56, 189, 248, 0.4),
+    rgba(255, 255, 255, 0.04),
+    rgba(52, 211, 153, 0.2)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.text-glow {
+  text-shadow:
+    0 0 18px rgba(56, 189, 248, 0.18),
+    0 0 34px rgba(96, 165, 250, 0.1);
+}
+
+.cyber-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+.noise-overlay {
+  position: relative;
+}
+
+.noise-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: radial-gradient(#ffffff 0.7px, transparent 0.7px);
+  background-size: 18px 18px;
+}
+
+.container-shell {
+  width: min(1280px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.glow-line {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(56, 189, 248, 0.8),
+    rgba(96, 165, 250, 0.6),
+    transparent
+  );
+  box-shadow: var(--glow-cyan);
+}
+
+.hero-orb {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.hero-orb-cyan {
+  background: rgba(56, 189, 248, 0.18);
+}
+
+.hero-orb-blue {
+  background: rgba(96, 165, 250, 0.14);
+}
+
+.hero-orb-emerald {
+  background: rgba(52, 211, 153, 0.1);
+}
