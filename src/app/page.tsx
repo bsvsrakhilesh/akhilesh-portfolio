@@ -1,11 +1,18 @@
+import Link from "next/link";
+import Footer from "../components/layout/Footer";
+import Navbar from "../components/layout/Navbar";
+import FeaturedProjects from "../components/sections/FeaturedProjects";
+
 export default function Home() {
   return (
     <div className="relative min-h-screen overflow-hidden">
+      <Navbar />
+
       <div className="hero-orb hero-orb-cyan -left-40 -top-24 h-88 w-88" />
       <div className="hero-orb hero-orb-blue -right-32 top-32 h-72 w-72" />
       <div className="hero-orb hero-orb-emerald -bottom-32 left-[30%] h-64 w-64" />
 
-      <section className="container-shell relative flex min-h-screen items-center justify-center py-20">
+      <section className="container-shell relative flex min-h-screen items-center justify-center px-0 pb-8 pt-32">
         <div className="noise-overlay cyber-grid glass-panel-strong panel-outline relative w-full overflow-hidden px-6 py-10 shadow-2xl md:px-10 md:py-14 lg:px-14 lg:py-16">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(56,189,248,0.16),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(52,211,153,0.10),transparent_26%)]" />
 
@@ -28,19 +35,25 @@ export default function Home() {
               </h1>
 
               <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 md:text-lg">
-                Premium AI/ML engineer portfolio experience focused on
-                intelligent products, retrieval systems, computer vision, IoT
-                platforms, and production-grade engineering thinking.
+                AI/ML engineer portfolio focused on retrieval systems, computer
+                vision, IoT platforms, embedded intelligence, and
+                production-grade engineering.
               </p>
 
               <div className="mt-10 flex flex-wrap items-center gap-4">
-                <button className="rounded-full border border-cyan-300/30 bg-cyan-400/10 px-6 py-3 text-sm font-medium text-cyan-100 shadow-[0_0_24px_rgba(34,211,238,0.14)] transition duration-300 hover:-translate-y-0.5 hover:bg-cyan-300/15">
+                <Link
+                  href="/projects"
+                  className="rounded-full border border-cyan-300/30 bg-cyan-400/10 px-6 py-3 text-sm font-medium text-cyan-100 shadow-[0_0_24px_rgba(34,211,238,0.14)] transition duration-300 hover:-translate-y-0.5 hover:bg-cyan-300/15"
+                >
                   View Projects
-                </button>
+                </Link>
 
-                <button className="rounded-full border border-white/12 bg-white/5 px-6 py-3 text-sm font-medium text-slate-100 transition duration-300 hover:-translate-y-0.5 hover:bg-white/10">
+                <a
+                  href="/resume/Akhilesh_Resume.pdf"
+                  className="rounded-full border border-white/12 bg-white/5 px-6 py-3 text-sm font-medium text-slate-100 transition duration-300 hover:-translate-y-0.5 hover:bg-white/10"
+                >
                   Resume
-                </button>
+                </a>
               </div>
 
               <div className="mt-12 grid gap-4 sm:grid-cols-3">
@@ -49,16 +62,16 @@ export default function Home() {
                     Focus
                   </p>
                   <p className="mt-2 text-sm font-medium text-white">
-                    RAG / Search Systems
+                    AI / ML Systems
                   </p>
                 </div>
 
                 <div className="glass-panel rounded-2xl px-4 py-4">
                   <p className="text-xs uppercase tracking-[0.24em] text-slate-400">
-                    Stack
+                    Core
                   </p>
                   <p className="mt-2 text-sm font-medium text-white">
-                    FastAPI · Next.js · AI/ML
+                    RAG · CV · IoT
                   </p>
                 </div>
 
@@ -114,16 +127,16 @@ export default function Home() {
 
                     <div className="mt-4 grid gap-3 sm:grid-cols-3">
                       <div className="rounded-xl border border-white/8 bg-white/4 px-3 py-3">
-                        <p className="text-xs text-slate-400">Projects</p>
+                        <p className="text-xs text-slate-400">Experience</p>
                         <p className="mt-2 text-xl font-semibold text-white">
-                          04
+                          03
                         </p>
                       </div>
 
                       <div className="rounded-xl border border-white/8 bg-white/4 px-3 py-3">
-                        <p className="text-xs text-slate-400">Systems</p>
+                        <p className="text-xs text-slate-400">Projects</p>
                         <p className="mt-2 text-xl font-semibold text-white">
-                          AI + IoT
+                          02
                         </p>
                       </div>
 
@@ -143,16 +156,16 @@ export default function Home() {
 
                     <div className="mt-4 space-y-3">
                       <div className="rounded-xl border border-white/8 bg-white/4 px-4 py-3 text-sm text-slate-200">
-                        LLM document ingestion workflow ready for deployment
-                        layer.
+                        LLM-enabled document ingestion and tagging pipeline
+                        indexed.
                       </div>
                       <div className="rounded-xl border border-white/8 bg-white/4 px-4 py-3 text-sm text-slate-200">
-                        Computer vision traffic-control module indexed in
-                        portfolio registry.
-                      </div>
-                      <div className="rounded-xl border border-white/8 bg-white/4 px-4 py-3 text-sm text-slate-200">
-                        Sensor systems and embedded intelligence showcase
+                        Multi-sensor IoT monitoring and calibration workflows
                         synchronized.
+                      </div>
+                      <div className="rounded-xl border border-white/8 bg-white/4 px-4 py-3 text-sm text-slate-200">
+                        Traffic control and assistive embedded systems queued
+                        for showcase.
                       </div>
                     </div>
                   </div>
@@ -166,6 +179,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <FeaturedProjects />
+      <Footer />
     </div>
   );
 }
