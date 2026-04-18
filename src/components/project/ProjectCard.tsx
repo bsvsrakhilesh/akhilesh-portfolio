@@ -37,12 +37,13 @@ export default function ProjectCard({ project, index = 1 }: ProjectCardProps) {
     <motion.article
       initial={{ opacity: 0, y: 26 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      whileHover={{ y: -4 }}
-      transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-      className={`glass-panel-strong panel-outline relative overflow-hidden rounded-4xl p-4 sm:p-5 lg:p-6 ${accent.glow}`}
+      viewport={{ once: true, amount: 0.18 }}
+      whileHover={{ y: -5, scale: 1.002 }}
+      transition={{ duration: 0.52, ease: [0.22, 1, 0.36, 1] }}
+      className={`panel-glow-edge relative overflow-hidden rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(10,15,28,0.92),rgba(6,10,20,0.86))] p-4 sm:p-5 lg:p-6 ${accent.glow}`}
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.04),transparent_24%),linear-gradient(180deg,rgba(255,255,255,0.018),transparent)]" />
+      <div className="pointer-events-none absolute inset-x-6 top-0 h-px bg-linear-to-r from-transparent via-cyan-300/35 to-transparent" />
 
       <div className="relative z-10">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
@@ -58,7 +59,9 @@ export default function ProjectCard({ project, index = 1 }: ProjectCardProps) {
 
             <div className="min-w-0 flex-1">
               <div className="mb-3 flex flex-wrap items-center gap-2.5">
-                <span className={`h-2.5 w-2.5 rounded-full ${accent.dot}`} />
+                <span
+                  className={`signal-flicker h-2.5 w-2.5 rounded-full ${accent.dot}`}
+                />
                 <span
                   className={`rounded-full border px-3 py-1 text-[10px] font-medium uppercase tracking-[0.24em] sm:text-[11px] ${accent.badge}`}
                 >
