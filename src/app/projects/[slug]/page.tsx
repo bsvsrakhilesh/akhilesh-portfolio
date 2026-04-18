@@ -15,19 +15,19 @@ const accentMap = {
     badge: "border-cyan-300/20 bg-cyan-400/10 text-cyan-200",
     text: "text-cyan-300",
     dot: "bg-cyan-400",
-    line: "from-cyan-300/70 via-cyan-300/18 to-transparent",
+    line: "from-cyan-300/75 via-cyan-300/20 to-transparent",
   },
   blue: {
     badge: "border-blue-300/20 bg-blue-400/10 text-blue-200",
     text: "text-blue-300",
     dot: "bg-blue-400",
-    line: "from-blue-300/70 via-blue-300/18 to-transparent",
+    line: "from-blue-300/75 via-blue-300/20 to-transparent",
   },
   emerald: {
     badge: "border-emerald-300/20 bg-emerald-400/10 text-emerald-200",
     text: "text-emerald-300",
     dot: "bg-emerald-400",
-    line: "from-emerald-300/70 via-emerald-300/18 to-transparent",
+    line: "from-emerald-300/75 via-emerald-300/20 to-transparent",
   },
 };
 
@@ -62,13 +62,15 @@ export default async function ProjectDetailPage({
 
       <main className="relative z-10 pt-28 sm:pt-30 md:pt-32">
         <section className="container-shell">
-          <div className="panel-glow-edge relative overflow-hidden rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(7,11,22,0.94),rgba(4,8,18,0.90))] shadow-[0_20px_80px_rgba(0,0,0,0.42)]">
+          <div className="panel-glow-edge relative overflow-hidden rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(5,9,18,0.95),rgba(3,7,14,0.92))] shadow-[0_24px_90px_rgba(0,0,0,0.5)]">
             <div className="pointer-events-none absolute inset-0 cyber-grid opacity-60" />
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(56,189,248,0.10),transparent_18%),radial-gradient(circle_at_80%_25%,rgba(96,165,250,0.08),transparent_18%),radial-gradient(circle_at_40%_84%,rgba(52,211,153,0.06),transparent_16%)]" />
-            <div className="pointer-events-none absolute inset-0 hero-scanlines opacity-30" />
-            <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-cyan-300/65 to-transparent" />
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(56,189,248,0.10),transparent_18%),radial-gradient(circle_at_82%_22%,rgba(96,165,250,0.08),transparent_18%),radial-gradient(circle_at_48%_84%,rgba(52,211,153,0.06),transparent_16%)]" />
+            <div className="pointer-events-none absolute inset-0 hero-scanlines opacity-25" />
 
-            <div className="relative grid gap-6 px-4 py-5 sm:px-6 sm:py-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-8">
+            <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-cyan-300/70 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-cyan-300/45 to-transparent" />
+
+            <div className="relative grid gap-6 px-4 py-5 sm:px-6 sm:py-6 lg:grid-cols-[1.08fr_0.92fr] lg:px-8 lg:py-8">
               <div className="rounded-4xl border border-white/8 bg-white/4 px-5 py-5 lg:px-6 lg:py-6">
                 <Link
                   href="/projects"
@@ -110,6 +112,7 @@ export default async function ProjectDetailPage({
                   <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-200/65">
                     Dossier Summary
                   </p>
+
                   <div className="mt-5 grid gap-4 sm:grid-cols-3">
                     <div>
                       <p className="text-[11px] uppercase tracking-[0.24em] text-slate-400">
@@ -140,42 +143,42 @@ export default async function ProjectDetailPage({
               </div>
 
               <div className="space-y-4">
-                <div className="rounded-4xl border border-white/8 bg-white/4 px-5 py-5">
+                <div className="rounded-4xl border border-white/8 bg-white/4 px-5 py-5 lg:px-6 lg:py-6">
                   <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-200/65">
                     Registry Metadata
                   </p>
 
                   <div className="mt-5 space-y-4">
-                    <div className="rounded-3xl border border-white/8 bg-white/4 px-4 py-4">
-                      <p className="text-[11px] uppercase tracking-[0.24em] text-slate-400">
-                        Entry State
-                      </p>
-                      <p className="mt-2 text-base font-medium text-white">
-                        Dossier Active
-                      </p>
-                    </div>
-
-                    <div className="rounded-3xl border border-white/8 bg-white/4 px-4 py-4">
-                      <p className="text-[11px] uppercase tracking-[0.24em] text-slate-400">
-                        Classification
-                      </p>
-                      <p className="mt-2 text-base font-medium text-white">
-                        Architecture-Led Showcase
-                      </p>
-                    </div>
-
-                    <div className="rounded-3xl border border-white/8 bg-white/4 px-4 py-4">
-                      <p className="text-[11px] uppercase tracking-[0.24em] text-slate-400">
-                        Public Access
-                      </p>
-                      <p className="mt-2 text-base font-medium text-white">
-                        Codebase not publicly available
-                      </p>
-                    </div>
+                    {[
+                      {
+                        label: "Entry State",
+                        value: "Dossier Active",
+                      },
+                      {
+                        label: "Classification",
+                        value: "Architecture-Led Showcase",
+                      },
+                      {
+                        label: "Public Access",
+                        value: "Codebase not publicly available",
+                      },
+                    ].map((item) => (
+                      <div
+                        key={item.label}
+                        className="rounded-3xl border border-white/8 bg-white/4 px-4 py-4"
+                      >
+                        <p className="text-[11px] uppercase tracking-[0.24em] text-slate-400">
+                          {item.label}
+                        </p>
+                        <p className="mt-2 text-base font-medium text-white">
+                          {item.value}
+                        </p>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
-                <div className="rounded-4xl border border-white/8 bg-white/4 px-5 py-5">
+                <div className="rounded-4xl border border-white/8 bg-white/4 px-5 py-5 lg:px-6 lg:py-6">
                   <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-200/65">
                     Stack Surface
                   </p>
@@ -213,16 +216,16 @@ export default async function ProjectDetailPage({
         </section>
 
         <section className="container-shell pt-8 md:pt-10">
-          <div className="grid gap-6 lg:grid-cols-[1.12fr_0.88fr]">
-            <div className="rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(8,12,24,0.78),rgba(5,9,19,0.72))] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
+          <div className="grid gap-6 lg:grid-cols-[1.06fr_0.94fr]">
+            <div className="rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(8,12,24,0.80),rgba(5,9,19,0.74))] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
               <div className="flex items-center gap-3">
                 <span className={`h-2.5 w-2.5 rounded-full ${accent.dot}`} />
                 <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-200/65">
-                  Problem
+                  Problem Frame
                 </p>
               </div>
 
-              <h2 className="mt-4 text-3xl font-semibold text-white">
+              <h2 className="mt-4 text-3xl font-semibold text-white md:text-4xl">
                 What this work was solving
               </h2>
 
@@ -235,15 +238,15 @@ export default async function ProjectDetailPage({
                   Technical Framing
                 </p>
                 <p className="mt-4 text-sm leading-8 text-slate-300 md:text-base">
-                  This dossier is structured to communicate system design
-                  intent, engineering workflow, and technical outcomes. The
-                  emphasis is on how the solution was framed, built, and
-                  translated into a usable intelligent system.
+                  This dossier is structured around engineering clarity: what
+                  the system was trying to solve, how it was approached, and why
+                  the work matters. The emphasis is on technical reasoning,
+                  architecture, and use-oriented execution.
                 </p>
               </div>
             </div>
 
-            <div className="rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(8,12,24,0.78),rgba(5,9,19,0.72))] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
+            <div className="rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(8,12,24,0.80),rgba(5,9,19,0.74))] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
               <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-200/65">
                 Approach Timeline
               </p>
@@ -286,13 +289,13 @@ export default async function ProjectDetailPage({
         </section>
 
         <section className="container-shell pt-8 md:pt-10">
-          <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
-            <div className="rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(8,12,24,0.78),rgba(5,9,19,0.72))] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
+          <div className="grid gap-6 lg:grid-cols-[0.94fr_1.06fr]">
+            <div className="rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(8,12,24,0.80),rgba(5,9,19,0.74))] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
               <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-200/65">
                 Outcome
               </p>
 
-              <h2 className="mt-4 text-3xl font-semibold text-white">
+              <h2 className="mt-4 text-3xl font-semibold text-white md:text-4xl">
                 Why this dossier matters
               </h2>
 
@@ -319,12 +322,12 @@ export default async function ProjectDetailPage({
               </div>
             </div>
 
-            <div className="rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(8,12,24,0.78),rgba(5,9,19,0.72))] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
+            <div className="rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(8,12,24,0.80),rgba(5,9,19,0.74))] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
               <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-200/65">
                 Related Registry Entries
               </p>
 
-              <h2 className="mt-4 text-3xl font-semibold text-white">
+              <h2 className="mt-4 text-3xl font-semibold text-white md:text-4xl">
                 Continue through the system
               </h2>
 
@@ -378,7 +381,7 @@ export default async function ProjectDetailPage({
         </section>
 
         <section className="container-shell pb-8 pt-8 md:pb-10 md:pt-10">
-          <div className="rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(8,12,24,0.78),rgba(5,9,19,0.72))] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
+          <div className="rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(8,12,24,0.80),rgba(5,9,19,0.74))] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
             <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
               <div>
                 <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-200/65">

@@ -6,6 +6,8 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 
+const RESUME_HREF = "/resume/akhilesh_resume.pdf";
+
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Projects", href: "/projects" },
@@ -26,9 +28,10 @@ export default function Navbar() {
       className="fixed inset-x-0 top-0 z-50"
     >
       <div className="container-shell pt-3 md:pt-4">
-        <nav className="glass-panel-strong panel-outline relative overflow-hidden rounded-4xl">
+        <nav className="panel-glow-edge relative overflow-hidden rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(8,12,24,0.94),rgba(5,9,19,0.90))] shadow-[0_18px_60px_rgba(0,0,0,0.38)]">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.12),transparent_30%),linear-gradient(90deg,transparent,rgba(255,255,255,0.03),transparent)]" />
           <div className="pointer-events-none absolute inset-x-10 top-0 h-px bg-linear-to-r from-transparent via-cyan-300/55 to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 left-[22%] hidden w-px bg-linear-to-b from-transparent via-cyan-300/10 to-transparent xl:block" />
 
           <div className="relative flex min-h-16 items-center justify-between px-3 py-3 sm:px-4 md:min-h-18 md:px-6">
             <Link href="/" className="group flex min-w-0 items-center gap-3">
@@ -36,7 +39,7 @@ export default function Navbar() {
                 animate={{
                   boxShadow: [
                     "0 0 18px rgba(34,211,238,0.08)",
-                    "0 0 28px rgba(34,211,238,0.16)",
+                    "0 0 28px rgba(34,211,238,0.18)",
                     "0 0 18px rgba(34,211,238,0.08)",
                   ],
                 }}
@@ -53,7 +56,7 @@ export default function Navbar() {
 
               <div className="min-w-0">
                 <p className="hidden text-[11px] uppercase tracking-[0.3em] text-cyan-200/65 sm:block">
-                  AI Command Center
+                  Inference Reactor
                 </p>
                 <p className="truncate text-sm font-medium text-white sm:text-base">
                   Akhilesh Portfolio
@@ -78,12 +81,17 @@ export default function Navbar() {
                   >
                     <Link
                       href={link.href}
-                      className={`relative rounded-full px-4 py-2 text-sm font-medium transition duration-300 ${
+                      className={`relative inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition duration-300 ${
                         isActive
                           ? "border border-cyan-300/20 bg-cyan-400/10 text-cyan-100"
                           : "border border-transparent text-slate-300 hover:border-white/10 hover:bg-white/5 hover:text-white"
                       }`}
                     >
+                      <span
+                        className={`h-2 w-2 rounded-full transition ${
+                          isActive ? "bg-cyan-400" : "bg-transparent"
+                        }`}
+                      />
                       {link.label}
                     </Link>
                   </motion.div>
@@ -98,9 +106,10 @@ export default function Navbar() {
                   delay: 0.35,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                href="/resume/Akhilesh_Resume.pdf"
-                className="shine-mask ml-2 inline-flex rounded-full border border-cyan-300/25 bg-cyan-400/10 px-5 py-2.5 text-sm font-medium text-cyan-100 shadow-[0_0_24px_rgba(34,211,238,0.10)] transition duration-300 hover:-translate-y-0.5 hover:bg-cyan-300/15"
+                href={RESUME_HREF}
+                className="shine-mask ml-2 inline-flex items-center gap-2 rounded-full border border-cyan-300/25 bg-cyan-400/10 px-5 py-2.5 text-sm font-medium text-cyan-100 shadow-[0_0_24px_rgba(34,211,238,0.10)] transition duration-300 hover:-translate-y-0.5 hover:bg-cyan-300/15"
               >
+                <span className="h-2 w-2 rounded-full bg-cyan-400" />
                 Resume
               </motion.a>
             </div>
@@ -144,12 +153,17 @@ export default function Navbar() {
                         <Link
                           href={link.href}
                           onClick={() => setIsOpen(false)}
-                          className={`block rounded-2xl px-4 py-3 text-sm font-medium transition duration-300 ${
+                          className={`flex items-center gap-2 rounded-2xl px-4 py-3 text-sm font-medium transition duration-300 ${
                             isActive
                               ? "border border-cyan-300/20 bg-cyan-400/10 text-cyan-100"
                               : "border border-white/8 bg-white/5 text-slate-200 hover:bg-white/10 hover:text-white"
                           }`}
                         >
+                          <span
+                            className={`h-2 w-2 rounded-full ${
+                              isActive ? "bg-cyan-400" : "bg-transparent"
+                            }`}
+                          />
                           {link.label}
                         </Link>
                       </motion.div>
@@ -161,9 +175,10 @@ export default function Navbar() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 6 }}
                     transition={{ delay: 0.2, duration: 0.2 }}
-                    href="/resume/Akhilesh_Resume.pdf"
-                    className="shine-mask block rounded-2xl border border-cyan-300/25 bg-cyan-400/10 px-4 py-3 text-sm font-medium text-cyan-100 transition duration-300 hover:bg-cyan-300/15"
+                    href={RESUME_HREF}
+                    className="shine-mask flex items-center gap-2 rounded-2xl border border-cyan-300/25 bg-cyan-400/10 px-4 py-3 text-sm font-medium text-cyan-100 transition duration-300 hover:bg-cyan-300/15"
                   >
+                    <span className="h-2 w-2 rounded-full bg-cyan-400" />
                     Resume
                   </motion.a>
                 </div>

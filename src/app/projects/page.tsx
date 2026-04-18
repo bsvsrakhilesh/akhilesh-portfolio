@@ -19,13 +19,15 @@ export default function ProjectsPage() {
 
       <main className="relative z-10 pt-28 sm:pt-30 md:pt-32">
         <section className="container-shell">
-          <div className="panel-glow-edge relative overflow-hidden rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(7,11,22,0.94),rgba(4,8,18,0.90))] shadow-[0_20px_80px_rgba(0,0,0,0.42)]">
+          <div className="panel-glow-edge relative overflow-hidden rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(5,9,18,0.95),rgba(3,7,14,0.92))] shadow-[0_24px_90px_rgba(0,0,0,0.5)]">
             <div className="pointer-events-none absolute inset-0 cyber-grid opacity-60" />
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(56,189,248,0.10),transparent_18%),radial-gradient(circle_at_80%_25%,rgba(96,165,250,0.08),transparent_18%),radial-gradient(circle_at_40%_84%,rgba(52,211,153,0.06),transparent_16%)]" />
-            <div className="pointer-events-none absolute inset-0 hero-scanlines opacity-30" />
-            <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-cyan-300/65 to-transparent" />
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(56,189,248,0.10),transparent_18%),radial-gradient(circle_at_82%_22%,rgba(96,165,250,0.08),transparent_18%),radial-gradient(circle_at_48%_84%,rgba(52,211,153,0.06),transparent_16%)]" />
+            <div className="pointer-events-none absolute inset-0 hero-scanlines opacity-25" />
 
-            <div className="relative grid gap-6 px-4 py-5 sm:px-6 sm:py-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-8">
+            <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-cyan-300/70 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-cyan-300/45 to-transparent" />
+
+            <div className="relative grid gap-6 px-4 py-5 sm:px-6 sm:py-6 lg:grid-cols-[1.08fr_0.92fr] lg:px-8 lg:py-8">
               <div className="rounded-4xl border border-white/8 bg-white/4 px-5 py-5 lg:px-6 lg:py-6">
                 <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-200/65">
                   Classified Registry
@@ -38,22 +40,23 @@ export default function ProjectsPage() {
                   </span>
                 </h1>
 
-                <p className="mt-5 max-w-3xl text-sm leading-8 text-slate-300 md:text-base">
-                  This registry presents professional experience and major
-                  project work as private system dossiers. The focus is on
-                  architecture, workflow, engineering depth, and technical
-                  clarity rather than public source-code exposure.
+                <p className="mt-6 max-w-3xl text-sm leading-8 text-slate-300 md:text-base">
+                  A cinematic registry of resume-backed work across AI/ML
+                  systems, retrieval engineering, computer vision, IoT,
+                  electronics, and embedded problem solving. Each entry opens as
+                  a private technical dossier rather than a standard portfolio
+                  case study.
                 </p>
 
                 <div className="mt-7 flex flex-wrap gap-3">
                   <div className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] uppercase tracking-[0.24em] text-slate-300">
-                    03 Experiences
+                    03 Experience Modules
                   </div>
                   <div className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] uppercase tracking-[0.24em] text-slate-300">
-                    02 Projects
+                    02 Project Dossiers
                   </div>
                   <div className="rounded-full border border-cyan-300/20 bg-cyan-400/10 px-4 py-2 text-[11px] uppercase tracking-[0.24em] text-cyan-200">
-                    Private Implementation
+                    Resume Synced
                   </div>
                 </div>
               </div>
@@ -76,8 +79,8 @@ export default function ProjectsPage() {
                       meta: "computer vision + assistive systems",
                     },
                     {
-                      code: "AC-01",
-                      title: "Architecture-first showcase enabled",
+                      code: "RG-01",
+                      title: "Architecture-led showcase enabled",
                       meta: "workflow + technical depth + outcomes",
                     },
                   ].map((item) => (
@@ -122,7 +125,7 @@ export default function ProjectsPage() {
         </section>
 
         <section className="container-shell pt-8 md:pt-10">
-          <div className="rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(8,12,24,0.78),rgba(5,9,19,0.72))] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
+          <div className="rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(8,12,24,0.80),rgba(5,9,19,0.74))] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
             <div className="mb-6 flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
               <div>
                 <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-200/65">
@@ -147,7 +150,7 @@ export default function ProjectsPage() {
         </section>
 
         <section className="container-shell pb-8 pt-8 md:pb-10 md:pt-10">
-          <div className="rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(8,12,24,0.78),rgba(5,9,19,0.72))] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
+          <div className="rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(8,12,24,0.80),rgba(5,9,19,0.74))] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
             <div className="mb-6 flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
               <div>
                 <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-200/65">

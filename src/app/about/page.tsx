@@ -5,15 +5,15 @@ import RegistryHero from "../../components/ui/RegistryHero";
 const operatingPrinciples = [
   {
     title: "Understand the system",
-    text: "Break down the full workflow, constraints, interfaces, dependencies, and failure points before building.",
+    text: "I prefer to understand the full workflow first: the interfaces, constraints, data movement, and possible failure points before implementation begins.",
   },
   {
     title: "Design for clarity",
-    text: "Prefer architecture that is explainable, structured, maintainable, and grounded in technical intent.",
+    text: "I value engineering that is readable, explainable, and structured well enough to be extended, discussed, and trusted.",
   },
   {
     title: "Build for use",
-    text: "The goal is not just a working model, but a system that can actually be used, extended, and trusted.",
+    text: "The final goal is not only a working model, but a system that can operate in a meaningful real-world context.",
   },
 ];
 
@@ -32,21 +32,21 @@ export default function AboutPage() {
             eyebrow="Identity Module"
             title="Engineer first."
             highlight="Building intelligent systems with real-world intent."
-            description="I am Akhilesh, an AI/ML-focused engineer working across retrieval systems, computer vision, multi-sensor IoT, embedded workflows, and architecture-led technical problem solving. I am interested in building systems that are not only technically strong, but also usable, explainable, and engineered with purpose."
+            description="I am Akhilesh, an AI/ML-focused engineer with experience across LLM-enabled retrieval systems, semantic search, computer vision, multi-sensor IoT, electronics, and embedded workflows. I am most interested in technical work that connects models, systems, and real use."
             chips={["AI / ML", "Retrieval Systems", "CV / IoT / Embedded"]}
             sideTitle="Identity Feed"
             sideItems={[
               {
                 code: "ID-01",
-                text: "AI/ML engineering with a systems-first mindset",
+                text: "Project Scientist experience in LLM ingestion, retrieval, and RAG workflows",
               },
               {
                 code: "ID-02",
-                text: "Retrieval, computer vision, IoT, and embedded workflow exposure",
+                text: "Research internship experience in multi-sensor IoT, monitoring, and analytics",
               },
               {
                 code: "ID-03",
-                text: "Architecture-led thinking rather than notebook-only presentation",
+                text: "Electronics and embedded foundation through C-DOT and applied hardware projects",
               },
             ]}
           />
@@ -56,7 +56,7 @@ export default function AboutPage() {
           <div className="grid gap-6 lg:grid-cols-[1.02fr_0.98fr]">
             <div className="rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(8,12,24,0.78),rgba(5,9,19,0.72))] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
               <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-200/65">
-                What I Build Toward
+                Engineering Direction
               </p>
 
               <h2 className="mt-4 text-3xl font-semibold text-white md:text-4xl">
@@ -65,9 +65,9 @@ export default function AboutPage() {
 
               <div className="mt-6 space-y-4">
                 {[
-                  "I am drawn to problems where AI models interact with real pipelines, interfaces, data flows, or physical systems.",
-                  "I want to grow as an engineer who can move from data and model logic to architecture, integration, and deployment.",
-                  "My strongest interest is in technical work that feels useful, structured, and grounded in a real application context.",
+                  "I am drawn to AI work that moves beyond experiments into usable engineering systems.",
+                  "My strongest interest is in architecture-led workflows where models, software, interfaces, or physical systems connect meaningfully.",
+                  "I want to keep growing as an engineer who can move from data and model logic to integration, deployment, and system behavior.",
                 ].map((item) => (
                   <div
                     key={item}
@@ -81,22 +81,22 @@ export default function AboutPage() {
 
             <div className="rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(8,12,24,0.78),rgba(5,9,19,0.72))] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
               <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-200/65">
-                Current Direction
+                Current Strength Mix
               </p>
 
               <div className="mt-6 grid gap-4">
                 {[
                   {
-                    label: "Core Goal",
-                    text: "Develop into an AI/ML engineer who can design and ship intelligent systems from data and model logic all the way to architecture and use.",
+                    label: "AI / ML",
+                    text: "LLM-enabled retrieval, semantic search, embeddings, and architecture-oriented AI workflows.",
                   },
                   {
-                    label: "Strength Mix",
-                    text: "A combination of AI/ML, system thinking, backend exposure, sensors, electronics, and applied engineering execution.",
+                    label: "Systems",
+                    text: "Backend integration, APIs, queues, metadata handling, and engineering structure around AI functionality.",
                   },
                   {
-                    label: "Design View",
-                    text: "Good systems should feel both technically deep and clearly structured. That same principle drives this portfolio.",
+                    label: "Applied Engineering",
+                    text: "IoT systems, sensors, embedded workflows, electronics exposure, and real-world implementation thinking.",
                   },
                 ].map((item) => (
                   <div

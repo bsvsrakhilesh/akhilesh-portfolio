@@ -12,8 +12,8 @@ const contactCards = [
   {
     code: "CH-02",
     label: "LinkedIn",
-    value: "linkedin.com/in/bsvsr-akhilesh",
-    href: "https://www.linkedin.com/in/bsvsr-akhilesh",
+    value: "linkedin.com/in/boddu-sesha-venkata-sai-ranga-akhilesh-5971b31b4",
+    href: "https://www.linkedin.com/in/boddu-sesha-venkata-sai-ranga-akhilesh-5971b31b4",
   },
   {
     code: "CH-03",
@@ -38,21 +38,21 @@ export default function ContactPage() {
             eyebrow="Communication Channel"
             title="Let’s connect and build"
             highlight="intelligent systems that matter."
-            description="Open to AI/ML engineering roles, intelligent product opportunities, applied technical discussions, and collaborations around retrieval, computer vision, IoT, embedded systems, and system design."
+            description="Open to AI/ML engineering roles, applied system-building opportunities, and technical discussions around retrieval, semantic search, computer vision, IoT, and embedded workflows."
             chips={["Email", "LinkedIn", "Phone"]}
             sideTitle="Channel Feed"
             sideItems={[
               {
                 code: "CN-01",
-                text: "Open to AI/ML engineering and applied systems opportunities",
+                text: "Best fit for AI/ML engineering, applied AI systems, and architecture-heavy roles.",
               },
               {
                 code: "CN-02",
-                text: "Best suited for technical discussions and architecture-led roles",
+                text: "Strong interest in work that connects models, systems, interfaces, and real use.",
               },
               {
                 code: "CN-03",
-                text: "Fastest contact path is direct email or LinkedIn",
+                text: "Direct email or LinkedIn is the fastest path for serious opportunities.",
               },
             ]}
           />
@@ -60,7 +60,7 @@ export default function ContactPage() {
 
         <section className="container-shell pb-8 pt-8 md:pb-10 md:pt-10">
           <div className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
-            <div className="rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(8,12,24,0.78),rgba(5,9,19,0.72))] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
+            <div className="rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(8,12,24,0.80),rgba(5,9,19,0.74))] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
               <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-200/65">
                 Contact Registry
               </p>
@@ -95,7 +95,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(8,12,24,0.78),rgba(5,9,19,0.72))] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
+            <div className="rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(8,12,24,0.80),rgba(5,9,19,0.74))] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
               <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-200/65">
                 Inquiry Terminal
               </p>
@@ -130,19 +130,18 @@ export default function ContactPage() {
                   className="resize-none rounded-3xl border border-white/10 bg-white/5 px-5 py-4 text-sm text-white outline-none transition duration-300 placeholder:text-slate-500 focus:border-cyan-300/25 focus:bg-white/8"
                 />
 
-                <button
-                  type="button"
-                  className="shine-mask w-fit rounded-full border border-cyan-300/25 bg-cyan-400/10 px-6 py-3 text-sm font-medium text-cyan-100 transition duration-300 hover:-translate-y-0.5 hover:bg-cyan-300/15"
+                <a
+                  href="mailto:bsvsrakhilesh01@gmail.com?subject=Opportunity%20for%20Akhilesh"
+                  className="shine-mask inline-flex w-fit rounded-full border border-cyan-300/25 bg-cyan-400/10 px-6 py-3 text-sm font-medium text-cyan-100 transition duration-300 hover:-translate-y-0.5 hover:bg-cyan-300/15"
                 >
-                  Send Inquiry
-                </button>
-              </form>
+                  Start Email Draft
+                </a>
 
-              <p className="mt-5 text-xs leading-6 text-slate-500">
-                This is currently a visual inquiry terminal. Functional delivery
-                can be connected later through Formspree, Resend, or a custom
-                backend.
-              </p>
+                <p className="mt-5 text-xs leading-6 text-slate-500">
+                  This opens a direct email draft so the contact experience is
+                  functional from day one.
+                </p>
+              </form>
             </div>
           </div>
         </section>

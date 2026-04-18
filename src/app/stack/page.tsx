@@ -4,81 +4,60 @@ import RegistryHero from "../../components/ui/RegistryHero";
 
 const stackGroups = [
   {
-    title: "Languages",
-    code: "LG-01",
-    items: ["Python", "SQL", "JavaScript", "TypeScript", "HTML", "CSS"],
+    title: "Programming",
+    code: "PG-01",
+    items: ["Python", "SQL", "JavaScript", "TypeScript"],
   },
   {
-    title: "AI / ML",
-    code: "AI-02",
+    title: "Frontend & Backend",
+    code: "FS-02",
+    items: ["React.js", "Node.js", "Express.js", "REST APIs"],
+  },
+  {
+    title: "Data & Infrastructure",
+    code: "DI-03",
+    items: ["PostgreSQL", "Prisma ORM", "Celery", "Redis Queue", "Docker"],
+  },
+  {
+    title: "AI / NLP / Retrieval",
+    code: "AI-04",
     items: [
       "Machine Learning",
-      "Deep Learning",
       "Natural Language Processing",
       "Large Language Models",
-      "Retrieval Augmented Generation",
-      "Semantic Search",
-      "Hybrid Retrieval",
+      "OpenAI API",
+      "RAG Pipelines",
       "Embeddings",
-    ],
-  },
-  {
-    title: "Frameworks & Libraries",
-    code: "FW-03",
-    items: [
-      "FastAPI",
-      "Scikit-Learn",
-      "Keras",
-      "NumPy",
-      "Pandas",
-      "Matplotlib",
-      "Plotly",
-      "spaCy",
-      "sentence-transformers",
+      "Semantic Search",
+      "Hybrid Search",
       "KeyBERT",
       "YAKE",
+      "spaCy",
+      "sentence-transformers",
     ],
   },
   {
-    title: "Backend & Data Systems",
-    code: "BD-04",
-    items: [
-      "Node.js",
-      "Express.js",
-      "Prisma",
-      "REST API",
-      "PostgreSQL",
-      "pgvector",
-      "Celery",
-      "Redis Queues",
-      "Docker",
-      "API Security",
-    ],
-  },
-  {
-    title: "Computer Vision / Audio / DSP",
+    title: "Computer Vision / Audio",
     code: "CV-05",
     items: [
       "Computer Vision",
       "OpenCV",
-      "Audio Feature Engineering",
-      "Signal Processing with librosa/SciPy",
-      "Windowing / Segmentation",
+      "librosa",
+      "Signal Processing",
       "Audio Transformers",
     ],
   },
   {
-    title: "Electronics / IoT",
-    code: "ET-06",
+    title: "IoT / Embedded / Electronics",
+    code: "HW-06",
     items: [
-      "Internet of Things",
-      "Rapid Prototyping",
-      "Embedded C",
+      "IoT Systems",
+      "Arduino",
       "Raspberry Pi",
-      "Arduino (ATMega 328P)",
-      "Seeed Studio Xiao ESP32S3",
       "PSoC 5LP",
-      "Autodesk Fusion",
+      "Embedded C",
+      "Rapid Prototyping",
+      "Sensor Integration",
     ],
   },
 ];
@@ -95,24 +74,24 @@ export default function StackPage() {
       <main className="relative z-10 pt-28 sm:pt-30 md:pt-32">
         <section className="container-shell">
           <RegistryHero
-            eyebrow="Stack Registry"
+            eyebrow="Systems Stack"
             title="Tools, frameworks, and systems"
             highlight="behind the work."
-            description="A registry of the technologies shaping this portfolio across AI/ML, backend systems, retrieval, electronics, embedded workflows, and applied engineering."
-            chips={["AI / ML", "Backend Systems", "IoT / Embedded"]}
-            sideTitle="Stack View"
+            description="This stack reflects the actual technologies behind my work in AI/ML engineering, retrieval systems, APIs, data workflows, computer vision, IoT, and embedded applications."
+            chips={["AI / ML", "Retrieval", "APIs", "IoT / Embedded"]}
+            sideTitle="Stack Feed"
             sideItems={[
               {
                 code: "ST-01",
-                text: "Breadth across software, AI, backend, data, and electronics",
+                text: "Built around Python, AI workflows, APIs, and architecture-oriented engineering.",
               },
               {
                 code: "ST-02",
-                text: "System thinking beyond isolated tools or models",
+                text: "Combines software systems with sensing, monitoring, and embedded device work.",
               },
               {
                 code: "ST-03",
-                text: "Technical stack chosen for practical use, not just familiarity",
+                text: "Focused on practical tools that support deployment, integration, and system clarity.",
               },
             ]}
           />
@@ -123,7 +102,7 @@ export default function StackPage() {
             {stackGroups.map((group) => (
               <div
                 key={group.title}
-                className="rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(8,12,24,0.78),rgba(5,9,19,0.72))] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8"
+                className="rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(8,12,24,0.80),rgba(5,9,19,0.74))] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8"
               >
                 <div className="flex items-center justify-between gap-3">
                   <div>

@@ -21,11 +21,15 @@ export default function RegistryHero({
   sideItems,
 }: RegistryHeroProps) {
   return (
-    <div className="panel-glow-edge relative overflow-hidden rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(7,11,22,0.94),rgba(4,8,18,0.90))] shadow-[0_20px_80px_rgba(0,0,0,0.42)]">
+    <div className="panel-glow-edge relative overflow-hidden rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(5,9,18,0.95),rgba(3,7,14,0.92))] shadow-[0_24px_90px_rgba(0,0,0,0.5)]">
       <div className="pointer-events-none absolute inset-0 cyber-grid opacity-60" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(56,189,248,0.10),transparent_18%),radial-gradient(circle_at_80%_25%,rgba(96,165,250,0.08),transparent_18%),radial-gradient(circle_at_40%_84%,rgba(52,211,153,0.06),transparent_16%)]" />
-      <div className="pointer-events-none absolute inset-0 hero-scanlines opacity-30" />
+      <div className="pointer-events-none absolute inset-0 hero-scanlines opacity-25" />
       <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-cyan-300/65 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-cyan-300/35 to-transparent" />
+
+      <div className="pointer-events-none absolute left-5 top-5 z-10 hidden h-10 w-10 rounded-tl-2xl border-l border-t border-cyan-300/25 lg:block" />
+      <div className="pointer-events-none absolute bottom-5 right-5 z-10 hidden h-10 w-10 rounded-br-2xl border-b border-r border-cyan-300/20 lg:block" />
 
       <div className="relative grid gap-6 px-4 py-5 sm:px-6 sm:py-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-8">
         <div className="rounded-4xl border border-white/8 bg-white/4 px-5 py-5 lg:px-6 lg:py-6">
@@ -83,7 +87,17 @@ export default function RegistryHero({
       </div>
 
       <div className="relative z-10 border-t border-white/8 px-4 py-3 sm:px-6 lg:px-8">
-        <div className="glow-line w-full" />
+        <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+          <div className="flex flex-wrap items-center gap-3 text-[11px] uppercase tracking-[0.24em] text-slate-400">
+            <span className="text-cyan-200/75">System Header Online</span>
+            <span className="hidden h-1 w-1 rounded-full bg-slate-600 sm:block" />
+            <span>Resume Synced</span>
+            <span className="hidden h-1 w-1 rounded-full bg-slate-600 sm:block" />
+            <span>Registry Active</span>
+          </div>
+
+          <div className="glow-line w-full lg:max-w-sm" />
+        </div>
       </div>
     </div>
   );

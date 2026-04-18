@@ -9,7 +9,7 @@ function seededValue(seed: number) {
   return x - Math.floor(x);
 }
 
-function makePoints(count: number, inner: number, outer: number, squash = 1) {
+function makeCloud(count: number, inner: number, outer: number, squash = 1) {
   const data = new Float32Array(count * 3);
 
   for (let i = 0; i < count; i += 1) {
@@ -26,16 +26,16 @@ function makePoints(count: number, inner: number, outer: number, squash = 1) {
   return data;
 }
 
-const STAR_POSITIONS = makePoints(1700, 4.2, 8.8, 0.72);
-const NODE_POSITIONS = makePoints(950, 1.9, 3.3, 0.82);
+const STAR_POSITIONS = makeCloud(1900, 4.4, 9.2, 0.74);
+const NODE_POSITIONS = makeCloud(1100, 1.8, 3.6, 0.84);
 
 function BackgroundStars() {
   const ref = useRef<THREE.Points>(null);
 
   useFrame((state) => {
     if (!ref.current) return;
-    ref.current.rotation.y = state.clock.elapsedTime * 0.015;
-    ref.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.08) * 0.06;
+    ref.current.rotation.y = state.clock.elapsedTime * 0.012;
+    ref.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.08) * 0.05;
   });
 
   return (
@@ -50,11 +50,11 @@ function BackgroundStars() {
         />
       </bufferGeometry>
       <pointsMaterial
-        color="#dbeafe"
-        size={0.028}
+        color="#e2e8f0"
+        size={0.026}
         sizeAttenuation
         transparent
-        opacity={0.9}
+        opacity={0.85}
         depthWrite={false}
       />
     </points>
@@ -67,7 +67,7 @@ function OrbitNodes() {
   useFrame((state) => {
     if (!ref.current) return;
     ref.current.rotation.y = state.clock.elapsedTime * 0.07;
-    ref.current.rotation.z = Math.sin(state.clock.elapsedTime * 0.22) * 0.18;
+    ref.current.rotation.z = Math.sin(state.clock.elapsedTime * 0.2) * 0.16;
   });
 
   return (
@@ -83,29 +83,29 @@ function OrbitNodes() {
       </bufferGeometry>
       <pointsMaterial
         color="#7dd3fc"
-        size={0.035}
+        size={0.034}
         sizeAttenuation
         transparent
-        opacity={0.95}
+        opacity={0.96}
         depthWrite={false}
       />
     </points>
   );
 }
 
-function CoreGlow() {
+function CorePulse() {
   const ref = useRef<THREE.Mesh>(null);
 
   useFrame((state) => {
     if (!ref.current) return;
-    const s = 1 + Math.sin(state.clock.elapsedTime * 1.25) * 0.045;
+    const s = 1 + Math.sin(state.clock.elapsedTime * 1.5) * 0.05;
     ref.current.scale.set(s, s, s);
   });
 
   return (
     <mesh ref={ref}>
-      <sphereGeometry args={[1.18, 40, 40]} />
-      <meshBasicMaterial color="#22d3ee" transparent opacity={0.11} />
+      <sphereGeometry args={[1.15, 40, 40]} />
+      <meshBasicMaterial color="#22d3ee" transparent opacity={0.12} />
     </mesh>
   );
 }
@@ -115,48 +115,71 @@ function InnerCore() {
 
   useFrame((state) => {
     if (!ref.current) return;
-    ref.current.rotation.y += 0.008;
-    ref.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.45) * 0.18;
+    ref.current.rotation.y += 0.009;
+    ref.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.45) * 0.15;
+    ref.current.rotation.z = Math.sin(state.clock.elapsedTime * 0.28) * 0.08;
   });
 
   return (
     <mesh ref={ref}>
-      <icosahedronGeometry args={[0.94, 2]} />
+      <icosahedronGeometry args={[0.92, 2]} />
       <meshStandardMaterial
         color="#67e8f9"
         emissive="#22d3ee"
-        emissiveIntensity={1}
-        roughness={0.16}
-        metalness={0.74}
+        emissiveIntensity={1.05}
+        roughness={0.14}
+        metalness={0.76}
         wireframe
       />
     </mesh>
   );
 }
 
-function OuterShell() {
+function CoreShell() {
   const ref = useRef<THREE.Mesh>(null);
 
-  useFrame(() => {
+  useFrame((state) => {
     if (!ref.current) return;
     ref.current.rotation.y -= 0.004;
     ref.current.rotation.z += 0.002;
+    ref.current.scale.setScalar(
+      1 + Math.sin(state.clock.elapsedTime * 0.7) * 0.015,
+    );
   });
 
   return (
     <mesh ref={ref}>
-      <icosahedronGeometry args={[1.46, 1]} />
+      <icosahedronGeometry args={[1.42, 1]} />
       <meshStandardMaterial
         color="#93c5fd"
         emissive="#60a5fa"
         emissiveIntensity={0.42}
-        roughness={0.24}
-        metalness={0.82}
+        roughness={0.22}
+        metalness={0.84}
         wireframe
         transparent
         opacity={0.72}
       />
     </mesh>
+  );
+}
+
+function AtmosphereShell() {
+  return (
+    <>
+      <mesh>
+        <sphereGeometry args={[2.12, 32, 32]} />
+        <meshBasicMaterial color="#38bdf8" transparent opacity={0.04} />
+      </mesh>
+      <mesh>
+        <sphereGeometry args={[2.72, 32, 32]} />
+        <meshBasicMaterial color="#60a5fa" transparent opacity={0.025} />
+      </mesh>
+      <mesh>
+        <sphereGeometry args={[3.2, 32, 32]} />
+        <meshBasicMaterial color="#34d399" transparent opacity={0.016} />
+      </mesh>
+    </>
   );
 }
 
@@ -186,97 +209,124 @@ function OrbitRing({
       <meshStandardMaterial
         color={color}
         emissive={color}
-        emissiveIntensity={1.25}
-        roughness={0.18}
+        emissiveIntensity={1.28}
+        roughness={0.16}
         metalness={0.92}
       />
     </mesh>
   );
 }
 
-function SweepRing() {
+function ScanRing() {
   const ref = useRef<THREE.Mesh>(null);
 
   useFrame((state) => {
     if (!ref.current) return;
-    ref.current.position.y = Math.sin(state.clock.elapsedTime * 1.1) * 0.55;
+    ref.current.position.y = Math.sin(state.clock.elapsedTime * 1.18) * 0.62;
     ref.current.rotation.x = Math.PI / 2;
-    ref.current.rotation.z = state.clock.elapsedTime * 0.8;
+    ref.current.rotation.z = state.clock.elapsedTime * 0.9;
   });
 
   return (
     <mesh ref={ref}>
       <torusGeometry args={[1.9, 0.02, 16, 180]} />
-      <meshBasicMaterial color="#a7f3d0" transparent opacity={0.8} />
+      <meshBasicMaterial color="#a7f3d0" transparent opacity={0.78} />
     </mesh>
   );
 }
 
-function AtmosphericHalo() {
+function SatelliteSwarm() {
+  const groupRef = useRef<THREE.Group>(null);
+  const innerRef = useRef<THREE.Group>(null);
+
+  useFrame((state) => {
+    if (groupRef.current) {
+      groupRef.current.rotation.y = state.clock.elapsedTime * 0.45;
+      groupRef.current.rotation.x =
+        Math.sin(state.clock.elapsedTime * 0.22) * 0.18;
+    }
+
+    if (innerRef.current) {
+      innerRef.current.rotation.y = -state.clock.elapsedTime * 0.75;
+      innerRef.current.rotation.z = state.clock.elapsedTime * 0.28;
+    }
+  });
+
   return (
-    <>
-      <mesh>
-        <sphereGeometry args={[2.35, 32, 32]} />
-        <meshBasicMaterial color="#38bdf8" transparent opacity={0.04} />
-      </mesh>
-      <mesh>
-        <sphereGeometry args={[2.85, 32, 32]} />
-        <meshBasicMaterial color="#60a5fa" transparent opacity={0.025} />
-      </mesh>
-    </>
+    <group ref={groupRef}>
+      <group ref={innerRef}>
+        <mesh position={[2.55, 0.22, 0]}>
+          <sphereGeometry args={[0.07, 18, 18]} />
+          <meshBasicMaterial color="#67e8f9" />
+        </mesh>
+        <mesh position={[-1.8, 1.05, 0.8]}>
+          <sphereGeometry args={[0.06, 18, 18]} />
+          <meshBasicMaterial color="#93c5fd" />
+        </mesh>
+        <mesh position={[0.65, -2.25, -0.55]}>
+          <sphereGeometry args={[0.065, 18, 18]} />
+          <meshBasicMaterial color="#a7f3d0" />
+        </mesh>
+        <mesh position={[-2.15, -0.55, -0.95]}>
+          <sphereGeometry args={[0.05, 18, 18]} />
+          <meshBasicMaterial color="#dbeafe" />
+        </mesh>
+      </group>
+    </group>
   );
 }
 
-function HeroScene() {
+function ReactorGroup() {
   const groupRef = useRef<THREE.Group>(null);
 
   useFrame((state) => {
     if (!groupRef.current) return;
     groupRef.current.rotation.y =
-      Math.sin(state.clock.elapsedTime * 0.22) * 0.28;
+      Math.sin(state.clock.elapsedTime * 0.2) * 0.24;
     groupRef.current.rotation.x =
-      Math.sin(state.clock.elapsedTime * 0.14) * 0.08;
+      Math.sin(state.clock.elapsedTime * 0.13) * 0.07;
   });
 
   return (
     <group ref={groupRef}>
-      <ambientLight intensity={0.68} />
-      <pointLight position={[3.4, 2.6, 4.2]} intensity={16} color="#67e8f9" />
+      <ambientLight intensity={0.7} />
+      <pointLight position={[3.8, 2.8, 4.2]} intensity={18} color="#67e8f9" />
       <pointLight
-        position={[-3.6, -1.8, -2.4]}
+        position={[-3.5, -1.8, -2.4]}
         intensity={10}
         color="#34d399"
       />
-      <pointLight position={[0, 4.4, -3]} intensity={9} color="#60a5fa" />
+      <pointLight position={[0, 4.6, -3.2]} intensity={9} color="#60a5fa" />
 
       <BackgroundStars />
       <OrbitNodes />
-      <AtmosphericHalo />
-      <CoreGlow />
+      <AtmosphereShell />
+      <CorePulse />
       <InnerCore />
-      <OuterShell />
-      <SweepRing />
+      <CoreShell />
+      <ScanRing />
+      <SatelliteSwarm />
 
       <OrbitRing
-        radius={2.15}
+        radius={2.1}
         tube={0.022}
-        speed={0.0035}
+        speed={0.0038}
         color="#dbeafe"
-        rotation={[0.4, 0, 0.15]}
+        rotation={[0.42, 0, 0.16]}
       />
       <OrbitRing
         radius={2.62}
         tube={0.02}
-        speed={-0.0028}
+        speed={-0.0029}
         color="#93c5fd"
-        rotation={[1.05, 0.15, 0.2]}
+        rotation={[1.02, 0.14, 0.18]}
       />
       <OrbitRing
-        radius={3.02}
+        radius={3.06}
         tube={0.018}
-        speed={0.0019}
+        speed={0.002}
         color="#a7f3d0"
-        rotation={[0.2, 0.1, 0]}
+        rotation={[0.22, 0.1, 0]}
       />
     </group>
   );
@@ -292,27 +342,31 @@ export default function HeroCanvas() {
       <div className="rotating-halo" />
 
       <div className="pointer-events-none absolute left-4 top-4 z-20 rounded-full border border-cyan-300/20 bg-cyan-400/10 px-3 py-1 text-[10px] uppercase tracking-[0.28em] text-cyan-200">
-        neural core
+        retrieval core
       </div>
 
-      <div className="pointer-events-none absolute right-4 top-4 z-20 rounded-full border border-emerald-300/20 bg-emerald-400/10 px-3 py-1 text-[10px] uppercase tracking-[0.28em] text-emerald-200 signal-flicker">
-        signal stable
+      <div className="pointer-events-none absolute right-4 top-4 z-20 rounded-full border border-blue-300/20 bg-blue-400/10 px-3 py-1 text-[10px] uppercase tracking-[0.28em] text-blue-200 signal-flicker">
+        vision rail
       </div>
 
       <div className="pointer-events-none absolute bottom-4 left-4 z-20 flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] uppercase tracking-[0.24em] text-slate-300">
-        <span className="h-2 w-2 rounded-full bg-cyan-400" />
-        live orbital field
+        <span className="h-2 w-2 rounded-full bg-emerald-400" />
+        sensor systems
+      </div>
+
+      <div className="pointer-events-none absolute bottom-4 right-4 z-20 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] uppercase tracking-[0.24em] text-slate-300">
+        architecture-led
       </div>
 
       <div className="pointer-events-none absolute inset-x-6 top-12 z-20 h-px bg-linear-to-r from-transparent via-cyan-300/40 to-transparent" />
       <div className="pointer-events-none absolute inset-x-8 bottom-12 z-20 h-px bg-linear-to-r from-transparent via-emerald-300/30 to-transparent" />
 
       <Canvas
-        camera={{ position: [0, 0, 5.8], fov: 42 }}
+        camera={{ position: [0, 0, 5.9], fov: 40 }}
         dpr={[1, 2]}
         gl={{ antialias: true, alpha: true }}
       >
-        <HeroScene />
+        <ReactorGroup />
       </Canvas>
     </div>
   );
