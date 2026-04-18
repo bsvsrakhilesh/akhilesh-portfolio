@@ -13,10 +13,40 @@ const leftStats = [
   { label: "Focus", value: "AI / ML" },
 ];
 
+const telemetry = [
+  {
+    label: "Retrieval",
+    status: "Hybrid Search",
+    percent: "92%",
+  },
+  {
+    label: "Vision",
+    status: "Edge Inference",
+    percent: "84%",
+  },
+  {
+    label: "IoT Systems",
+    status: "Monitoring Active",
+    percent: "88%",
+  },
+];
+
 const rightFeed = [
-  "Hybrid retrieval pipeline synced",
-  "Multi-sensor monitoring workflows active",
-  "Vision and embedded systems registered",
+  {
+    code: "RG-01",
+    title: "Hybrid retrieval pipeline synced",
+    meta: "vector + keyword registry",
+  },
+  {
+    code: "IO-07",
+    title: "Multi-sensor monitoring workflows active",
+    meta: "live sensing + analytics",
+  },
+  {
+    code: "CV-04",
+    title: "Vision and embedded systems registered",
+    meta: "edge pipeline indexed",
+  },
 ];
 
 export default function Home() {
@@ -42,14 +72,18 @@ export default function Home() {
 
       <main className="relative z-10">
         <section className="container-shell relative min-h-screen pt-28 sm:pt-30 md:pt-32">
-          <div className="relative min-h-[calc(100vh-8rem)] overflow-hidden rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(7,11,22,0.92),rgba(4,8,18,0.88))] shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
+          <div className="panel-glow-edge relative min-h-[calc(100vh-8rem)] overflow-hidden rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(7,11,22,0.92),rgba(4,8,18,0.88))] shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
             <div className="pointer-events-none absolute inset-0 cyber-grid opacity-60" />
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_42%,rgba(56,189,248,0.10),transparent_24%),radial-gradient(circle_at_80%_18%,rgba(96,165,250,0.08),transparent_18%),radial-gradient(circle_at_15%_82%,rgba(52,211,153,0.06),transparent_20%)]" />
+            <div className="pointer-events-none absolute inset-0 hero-scanlines opacity-30" />
 
             <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-cyan-300/70 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-cyan-300/50 to-transparent" />
 
-            <div className="relative grid min-h-[calc(100vh-8rem)] grid-cols-1 lg:grid-cols-[1.05fr_1.2fr_0.78fr]">
+            <div className="pointer-events-none absolute left-5 top-5 z-10 hidden h-10 w-10 rounded-tl-2xl border-l border-t border-cyan-300/25 lg:block" />
+            <div className="pointer-events-none absolute bottom-5 right-5 z-10 hidden h-10 w-10 rounded-br-2xl border-b border-r border-cyan-300/20 lg:block" />
+
+            <div className="relative grid min-h-[calc(100vh-8rem)] grid-cols-1 lg:grid-cols-[1.02fr_1.18fr_0.8fr]">
               <div className="relative z-10 flex flex-col justify-between px-5 pb-6 pt-6 sm:px-6 md:px-8 lg:border-r lg:border-white/8 lg:px-8 lg:pb-8 lg:pt-8 xl:px-10">
                 <div>
                   <motion.div
@@ -173,7 +207,7 @@ export default function Home() {
                   }}
                   className="relative w-full max-w-2xl"
                 >
-                  <div className="pointer-events-none absolute inset-0 rounded-4xl bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.12),transparent_44%)] blur-2xl" />
+                  <div className="pointer-events-none absolute inset-0 rounded-4xl bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.16),transparent_42%)] blur-2xl" />
                   <HeroCanvas />
                 </motion.div>
               </div>
@@ -189,8 +223,8 @@ export default function Home() {
                   }}
                   className="space-y-4"
                 >
-                  <div className="glass-panel-strong rounded-3xl p-4">
-                    <div className="flex items-center justify-between gap-3">
+                  <div className="glass-panel-strong telemetry-grid rounded-3xl p-4">
+                    <div className="flex items-start justify-between gap-3">
                       <div>
                         <p className="text-[11px] uppercase tracking-[0.28em] text-cyan-200/65">
                           Status
@@ -204,21 +238,62 @@ export default function Home() {
                         Online
                       </div>
                     </div>
-                  </div>
 
-                  <div className="glass-panel rounded-3xl p-4">
-                    <p className="text-[11px] uppercase tracking-[0.24em] text-slate-400">
-                      Active Module
-                    </p>
-                    <p className="mt-2 text-base font-medium text-white">
-                      Retrieval Intelligence
-                    </p>
-                    <div className="mt-4 inline-flex rounded-full bg-cyan-400/10 px-3 py-1 text-xs text-cyan-200">
-                      Hybrid Search
+                    <div className="mt-4 rounded-2xl border border-white/8 bg-white/4 px-4 py-3">
+                      <p className="text-[11px] uppercase tracking-[0.24em] text-slate-400">
+                        Active Module
+                      </p>
+                      <p className="mt-2 text-base font-medium text-white">
+                        Retrieval Intelligence
+                      </p>
+                      <div className="mt-3 inline-flex rounded-full bg-cyan-400/10 px-3 py-1 text-xs text-cyan-200">
+                        Hybrid Search
+                      </div>
                     </div>
                   </div>
 
-                  <div className="glass-panel rounded-3xl p-4">
+                  <div className="glass-panel telemetry-grid rounded-3xl p-4">
+                    <div className="flex items-center justify-between gap-3">
+                      <p className="text-[11px] uppercase tracking-[0.24em] text-slate-400">
+                        Telemetry Rail
+                      </p>
+                      <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] uppercase tracking-[0.2em] text-slate-400">
+                        Live
+                      </span>
+                    </div>
+
+                    <div className="mt-4 space-y-4">
+                      {telemetry.map((item) => (
+                        <div
+                          key={item.label}
+                          className="rounded-2xl border border-white/8 bg-white/4 px-4 py-3"
+                        >
+                          <div className="flex items-center justify-between gap-3">
+                            <div>
+                              <p className="text-xs text-slate-400">
+                                {item.label}
+                              </p>
+                              <p className="mt-1 text-sm font-medium text-white">
+                                {item.status}
+                              </p>
+                            </div>
+                            <p className="text-sm font-semibold text-cyan-300">
+                              {item.percent}
+                            </p>
+                          </div>
+
+                          <div className="mt-3 h-1.5 rounded-full bg-white/8">
+                            <div
+                              className="h-1.5 rounded-full bg-linear-to-r from-cyan-300 via-cyan-400 to-blue-400"
+                              style={{ width: item.percent }}
+                            />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="glass-panel telemetry-grid rounded-3xl p-4">
                     <p className="text-[11px] uppercase tracking-[0.24em] text-slate-400">
                       System Feed
                     </p>
@@ -226,47 +301,28 @@ export default function Home() {
                     <div className="mt-4 space-y-3">
                       {rightFeed.map((item, index) => (
                         <motion.div
-                          key={item}
+                          key={item.code}
                           initial={{ opacity: 0, x: 12 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{
                             duration: 0.38,
                             delay: 0.5 + index * 0.08,
                           }}
-                          className="rounded-2xl border border-white/8 bg-white/4 px-4 py-3 text-sm leading-6 text-slate-200"
-                        >
-                          {item}
-                        </motion.div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="glass-panel rounded-3xl p-4">
-                    <p className="text-[11px] uppercase tracking-[0.24em] text-slate-400">
-                      Current Metrics
-                    </p>
-
-                    <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3 lg:grid-cols-1">
-                      {[
-                        { label: "Experience", value: "03" },
-                        { label: "Projects", value: "02" },
-                        {
-                          label: "State",
-                          value: "Stable",
-                          valueClass: "text-cyan-300",
-                        },
-                      ].map((item) => (
-                        <div
-                          key={item.label}
                           className="rounded-2xl border border-white/8 bg-white/4 px-4 py-3"
                         >
-                          <p className="text-xs text-slate-400">{item.label}</p>
-                          <p
-                            className={`mt-2 text-lg font-semibold text-white ${item.valueClass ?? ""}`}
-                          >
-                            {item.value}
+                          <div className="flex items-center justify-between gap-3">
+                            <p className="text-[11px] uppercase tracking-[0.24em] text-cyan-200/75">
+                              {item.code}
+                            </p>
+                            <span className="signal-flicker h-2 w-2 rounded-full bg-cyan-400" />
+                          </div>
+                          <p className="mt-2 text-sm leading-6 text-slate-200">
+                            {item.title}
                           </p>
-                        </div>
+                          <p className="mt-2 text-xs uppercase tracking-[0.2em] text-slate-500">
+                            {item.meta}
+                          </p>
+                        </motion.div>
                       ))}
                     </div>
                   </div>

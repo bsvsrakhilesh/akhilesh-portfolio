@@ -13,90 +13,165 @@ export default function ProjectsPage() {
     <div className="relative min-h-screen overflow-hidden">
       <Navbar />
 
-      <div className="hero-orb hero-orb-cyan -left-40 top-20 h-88 w-88" />
-      <div className="hero-orb hero-orb-blue -right-32 top-64 h-72 w-72" />
-      <div className="hero-orb hero-orb-emerald bottom-10 left-[20%] h-64 w-64" />
+      <div className="hero-orb hero-orb-cyan -left-32 top-10 h-72 w-72 sm:-left-36 sm:h-80 sm:w-80 lg:-left-44 lg:h-104 lg:w-104" />
+      <div className="hero-orb hero-orb-blue -right-24 top-24 h-64 w-64 sm:-right-28 sm:h-72 sm:w-72 lg:-right-36 lg:h-96 lg:w-96" />
+      <div className="hero-orb hero-orb-emerald -bottom-20 left-[24%] h-56 w-56 sm:h-64 sm:w-64 lg:-bottom-28 lg:h-80 lg:w-80" />
 
-      <main className="relative z-10 pt-32">
+      <main className="relative z-10 pt-28 sm:pt-30 md:pt-32">
         <section className="container-shell">
-          <div className="noise-overlay cyber-grid glass-panel-strong panel-outline relative overflow-hidden rounded-4xl px-6 py-10 md:px-10 md:py-14 lg:px-14">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(56,189,248,0.16),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(52,211,153,0.10),transparent_26%)]" />
+          <div className="panel-glow-edge relative overflow-hidden rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(7,11,22,0.94),rgba(4,8,18,0.90))] shadow-[0_20px_80px_rgba(0,0,0,0.42)]">
+            <div className="pointer-events-none absolute inset-0 cyber-grid opacity-60" />
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(56,189,248,0.10),transparent_18%),radial-gradient(circle_at_80%_25%,rgba(96,165,250,0.08),transparent_18%),radial-gradient(circle_at_40%_84%,rgba(52,211,153,0.06),transparent_16%)]" />
+            <div className="pointer-events-none absolute inset-0 hero-scanlines opacity-30" />
+            <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-cyan-300/65 to-transparent" />
 
-            <div className="relative z-10 max-w-4xl">
-              <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-200/65">
-                Project Registry
-              </p>
+            <div className="relative grid gap-6 px-4 py-5 sm:px-6 sm:py-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-8">
+              <div className="rounded-4xl border border-white/8 bg-white/4 px-5 py-5 lg:px-6 lg:py-6">
+                <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-200/65">
+                  Classified Registry
+                </p>
 
-              <h1 className="mt-4 text-4xl font-semibold leading-tight text-white md:text-5xl xl:text-6xl">
-                Experience and projects,
-                <span className="mt-2 block text-cyan-300">
-                  organized as private case studies.
-                </span>
-              </h1>
+                <h1 className="mt-4 max-w-4xl text-4xl font-semibold leading-tight text-white md:text-5xl xl:text-6xl">
+                  Experience and project dossiers,
+                  <span className="mt-2 block text-cyan-300">
+                    organized as a technical registry.
+                  </span>
+                </h1>
 
-              <p className="mt-6 max-w-3xl text-sm leading-8 text-slate-300 md:text-base">
-                This portfolio section highlights your professional experience
-                and major projects using architecture-led storytelling,
-                technical stack visibility, and outcome-focused summaries
-                without exposing private source code.
-              </p>
+                <p className="mt-5 max-w-3xl text-sm leading-8 text-slate-300 md:text-base">
+                  This registry presents professional experience and major
+                  project work as private system dossiers. The focus is on
+                  architecture, workflow, engineering depth, and technical
+                  clarity rather than public source-code exposure.
+                </p>
 
-              <div className="mt-8 flex flex-wrap gap-3">
-                <div className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.24em] text-slate-300">
-                  03 Experiences
+                <div className="mt-7 flex flex-wrap gap-3">
+                  <div className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] uppercase tracking-[0.24em] text-slate-300">
+                    03 Experiences
+                  </div>
+                  <div className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] uppercase tracking-[0.24em] text-slate-300">
+                    02 Projects
+                  </div>
+                  <div className="rounded-full border border-cyan-300/20 bg-cyan-400/10 px-4 py-2 text-[11px] uppercase tracking-[0.24em] text-cyan-200">
+                    Private Implementation
+                  </div>
                 </div>
-                <div className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.24em] text-slate-300">
-                  02 Projects
+              </div>
+
+              <div className="rounded-4xl border border-white/8 bg-white/4 px-5 py-5 lg:px-6 lg:py-6">
+                <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-200/65">
+                  Registry Feed
+                </p>
+
+                <div className="mt-5 space-y-4">
+                  {[
+                    {
+                      code: "EX-03",
+                      title: "Professional experience modules loaded",
+                      meta: "AI systems + electronics + embedded engineering",
+                    },
+                    {
+                      code: "PJ-02",
+                      title: "Major project dossiers indexed",
+                      meta: "computer vision + assistive systems",
+                    },
+                    {
+                      code: "AC-01",
+                      title: "Architecture-first showcase enabled",
+                      meta: "workflow + technical depth + outcomes",
+                    },
+                  ].map((item) => (
+                    <div
+                      key={item.code}
+                      className="rounded-3xl border border-white/8 bg-white/4 px-4 py-4"
+                    >
+                      <div className="flex items-center justify-between gap-3">
+                        <p className="text-[11px] uppercase tracking-[0.24em] text-cyan-200/75">
+                          {item.code}
+                        </p>
+                        <span className="signal-flicker h-2 w-2 rounded-full bg-cyan-400" />
+                      </div>
+                      <p className="mt-2 text-sm font-medium text-white">
+                        {item.title}
+                      </p>
+                      <p className="mt-2 text-xs uppercase tracking-[0.2em] text-slate-500">
+                        {item.meta}
+                      </p>
+                    </div>
+                  ))}
                 </div>
-                <div className="rounded-full border border-cyan-300/20 bg-cyan-400/10 px-4 py-2 text-xs uppercase tracking-[0.24em] text-cyan-200">
-                  Private Implementation
+              </div>
+            </div>
+
+            <div className="relative z-10 border-t border-white/8 px-4 py-3 sm:px-6 lg:px-8">
+              <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+                <div className="flex flex-wrap items-center gap-3 text-[11px] uppercase tracking-[0.24em] text-slate-400">
+                  <span className="text-cyan-200/75">Registry Online</span>
+                  <span className="hidden h-1 w-1 rounded-full bg-slate-600 sm:block" />
+                  <span>Experience</span>
+                  <span className="hidden h-1 w-1 rounded-full bg-slate-600 sm:block" />
+                  <span>Projects</span>
+                  <span className="hidden h-1 w-1 rounded-full bg-slate-600 sm:block" />
+                  <span>Dossiers</span>
                 </div>
+
+                <div className="glow-line w-full lg:max-w-sm" />
               </div>
             </div>
           </div>
         </section>
 
-        <section className="container-shell pt-10">
-          <div className="mb-8">
-            <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-200/65">
-              Experience
-            </p>
-            <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">
-              Professional experience highlights
-            </h2>
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-300 md:text-base">
-              Roles that show your progression across AI systems, data analysis,
-              electronics, embedded workflows, and production-minded
-              engineering.
-            </p>
-          </div>
+        <section className="container-shell pt-8 md:pt-10">
+          <div className="rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(8,12,24,0.78),rgba(5,9,19,0.72))] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
+            <div className="mb-6 flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
+              <div>
+                <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-200/65">
+                  Experience Registry
+                </p>
+                <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">
+                  Professional experience modules
+                </h2>
+              </div>
 
-          <div className="grid gap-5 lg:grid-cols-2">
-            {experiences.map((item) => (
-              <ProjectCard key={item.slug} project={item} />
-            ))}
+              <div className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] uppercase tracking-[0.24em] text-slate-300">
+                03 Entries
+              </div>
+            </div>
+
+            <div className="space-y-5">
+              {experiences.map((item, index) => (
+                <ProjectCard key={item.slug} project={item} index={index + 1} />
+              ))}
+            </div>
           </div>
         </section>
 
-        <section className="container-shell pb-8 pt-14">
-          <div className="mb-8">
-            <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-200/65">
-              Projects
-            </p>
-            <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">
-              Major project showcases
-            </h2>
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-300 md:text-base">
-              Applied systems work spanning computer vision, embedded
-              intelligence, assistive technology, and real-world deployment
-              thinking.
-            </p>
-          </div>
+        <section className="container-shell pb-8 pt-8 md:pb-10 md:pt-10">
+          <div className="rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(8,12,24,0.78),rgba(5,9,19,0.72))] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
+            <div className="mb-6 flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
+              <div>
+                <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-200/65">
+                  Project Registry
+                </p>
+                <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">
+                  Major project dossiers
+                </h2>
+              </div>
 
-          <div className="grid gap-5 lg:grid-cols-2">
-            {portfolioProjects.map((item) => (
-              <ProjectCard key={item.slug} project={item} />
-            ))}
+              <div className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] uppercase tracking-[0.24em] text-slate-300">
+                02 Entries
+              </div>
+            </div>
+
+            <div className="space-y-5">
+              {portfolioProjects.map((item, index) => (
+                <ProjectCard
+                  key={item.slug}
+                  project={item}
+                  index={experiences.length + index + 1}
+                />
+              ))}
+            </div>
           </div>
         </section>
       </main>

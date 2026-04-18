@@ -369,3 +369,173 @@ textarea {
     padding-top: 3rem;
   }
 }
+
+@keyframes scan-drift {
+  0% {
+    transform: translateY(-8%);
+  }
+  100% {
+    transform: translateY(8%);
+  }
+}
+
+@keyframes beam-sweep {
+  0% {
+    transform: translateX(-120%) skewX(-18deg);
+    opacity: 0;
+  }
+  18% {
+    opacity: 0.18;
+  }
+  40% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateX(140%) skewX(-18deg);
+    opacity: 0;
+  }
+}
+
+@keyframes rotate-halo {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes flicker-soft {
+  0%,
+  100% {
+    opacity: 0.72;
+  }
+  25% {
+    opacity: 0.58;
+  }
+  50% {
+    opacity: 0.84;
+  }
+  75% {
+    opacity: 0.66;
+  }
+}
+
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 12;
+  background: radial-gradient(
+    circle at center,
+    transparent 40%,
+    rgba(3, 6, 14, 0.18) 66%,
+    rgba(3, 6, 14, 0.72) 100%
+  );
+}
+
+.hero-scanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 13;
+  opacity: 0.08;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.09) 0px,
+    rgba(255, 255, 255, 0.09) 1px,
+    transparent 2px,
+    transparent 8px
+  );
+  animation: scan-drift 8s linear infinite alternate;
+}
+
+.hero-beam {
+  position: absolute;
+  inset: -12%;
+  pointer-events: none;
+  z-index: 14;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(103, 232, 249, 0.04),
+    rgba(147, 197, 253, 0.12),
+    rgba(167, 243, 208, 0.04),
+    transparent
+  );
+  filter: blur(18px);
+  animation: beam-sweep 9s ease-in-out infinite;
+}
+
+.hud-corners {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 15;
+}
+
+.hud-corners::before,
+.hud-corners::after {
+  content: "";
+  position: absolute;
+  width: 5.5rem;
+  height: 5.5rem;
+  border-color: rgba(125, 211, 252, 0.35);
+  opacity: 0.9;
+}
+
+.hud-corners::before {
+  top: 1rem;
+  left: 1rem;
+  border-top: 1px solid rgba(125, 211, 252, 0.35);
+  border-left: 1px solid rgba(125, 211, 252, 0.35);
+  border-top-left-radius: 1rem;
+}
+
+.hud-corners::after {
+  right: 1rem;
+  bottom: 1rem;
+  border-right: 1px solid rgba(125, 211, 252, 0.35);
+  border-bottom: 1px solid rgba(125, 211, 252, 0.35);
+  border-bottom-right-radius: 1rem;
+}
+
+.rotating-halo {
+  position: absolute;
+  inset: 10%;
+  border-radius: 999px;
+  pointer-events: none;
+  z-index: 11;
+  border: 1px dashed rgba(125, 211, 252, 0.12);
+  animation: rotate-halo 36s linear infinite;
+}
+
+.signal-flicker {
+  animation: flicker-soft 3.4s ease-in-out infinite;
+}
+
+.panel-glow-edge {
+  position: relative;
+}
+
+.panel-glow-edge::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(56, 189, 248, 0.06),
+    transparent 22%,
+    transparent 78%,
+    rgba(52, 211, 153, 0.05)
+  );
+}
+
+.telemetry-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 26px 26px;
+}

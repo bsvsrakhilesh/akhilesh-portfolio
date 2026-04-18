@@ -26,8 +26,8 @@ function makePoints(count: number, inner: number, outer: number, squash = 1) {
   return data;
 }
 
-const STAR_POSITIONS = makePoints(1600, 4.4, 8.6, 0.72);
-const NODE_POSITIONS = makePoints(900, 1.8, 3.25, 0.82);
+const STAR_POSITIONS = makePoints(1700, 4.2, 8.8, 0.72);
+const NODE_POSITIONS = makePoints(950, 1.9, 3.3, 0.82);
 
 function BackgroundStars() {
   const ref = useRef<THREE.Points>(null);
@@ -105,7 +105,7 @@ function CoreGlow() {
   return (
     <mesh ref={ref}>
       <sphereGeometry args={[1.18, 40, 40]} />
-      <meshBasicMaterial color="#22d3ee" transparent opacity={0.1} />
+      <meshBasicMaterial color="#22d3ee" transparent opacity={0.11} />
     </mesh>
   );
 }
@@ -217,7 +217,7 @@ function AtmosphericHalo() {
     <>
       <mesh>
         <sphereGeometry args={[2.35, 32, 32]} />
-        <meshBasicMaterial color="#38bdf8" transparent opacity={0.035} />
+        <meshBasicMaterial color="#38bdf8" transparent opacity={0.04} />
       </mesh>
       <mesh>
         <sphereGeometry args={[2.85, 32, 32]} />
@@ -284,15 +284,18 @@ function HeroScene() {
 
 export default function HeroCanvas() {
   return (
-    <div className="shine-mask relative h-96 w-full overflow-hidden rounded-4xl border border-white/10 bg-transparent sm:h-112 lg:h-136">
-      <div className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_center,transparent_34%,rgba(5,8,22,0.12)_62%,rgba(5,8,22,0.72)_100%)]" />
-      <div className="pointer-events-none absolute inset-0 z-10 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.05),transparent_18%,transparent_84%,rgba(255,255,255,0.04))]" />
+    <div className="panel-glow-edge relative h-96 w-full overflow-hidden rounded-4xl border border-white/10 bg-transparent sm:h-112 lg:h-136">
+      <div className="hero-vignette" />
+      <div className="hero-scanlines" />
+      <div className="hero-beam" />
+      <div className="hud-corners" />
+      <div className="rotating-halo" />
 
       <div className="pointer-events-none absolute left-4 top-4 z-20 rounded-full border border-cyan-300/20 bg-cyan-400/10 px-3 py-1 text-[10px] uppercase tracking-[0.28em] text-cyan-200">
         neural core
       </div>
 
-      <div className="pointer-events-none absolute right-4 top-4 z-20 rounded-full border border-emerald-300/20 bg-emerald-400/10 px-3 py-1 text-[10px] uppercase tracking-[0.28em] text-emerald-200">
+      <div className="pointer-events-none absolute right-4 top-4 z-20 rounded-full border border-emerald-300/20 bg-emerald-400/10 px-3 py-1 text-[10px] uppercase tracking-[0.28em] text-emerald-200 signal-flicker">
         signal stable
       </div>
 
