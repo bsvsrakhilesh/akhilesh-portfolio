@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
+import { sitePath } from "../../lib/sitePath";
 
-const RESUME_HREF = "/resume/akhilesh_resume.pdf";
+const RESUME_HREF = sitePath("/resume/akhilesh_resume.pdf");
 
 const quickLinks = [
   { label: "Projects", href: "/projects" },

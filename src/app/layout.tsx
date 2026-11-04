@@ -2,11 +2,12 @@ import type { Metadata, Viewport } from "next";
 import MotionPreferences from "../components/MotionPreferences";
 import "./globals.css";
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
+
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ||
-      (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000"),
-  ),
+  metadataBase: new URL(new URL(siteUrl).origin),
   title: {
     default: "Akhilesh | AI/ML Systems Engineer",
     template: "%s | Akhilesh",

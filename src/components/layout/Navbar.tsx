@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
+import { sitePath } from "../../lib/sitePath";
 
 const links = [
   { label: "Work", href: "/projects" },
@@ -69,7 +70,7 @@ export default function Navbar() {
                 <span>0{index + 1}</span>{link.label}
               </Link>
             ))}
-            <a href="/resume/akhilesh_resume.pdf">Download résumé ↗</a>
+            <a href={sitePath("/resume/akhilesh_resume.pdf")}>Download résumé ↗</a>
           </motion.div>
         )}
       </AnimatePresence>

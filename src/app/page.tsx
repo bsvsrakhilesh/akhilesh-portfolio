@@ -7,6 +7,7 @@ import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import FeaturedProjects from "../components/sections/FeaturedProjects";
 import SystemMap from "../components/hero/SystemMap";
+import { sitePath } from "../lib/sitePath";
 
 const disciplines = [
   {
@@ -79,7 +80,7 @@ export default function Home() {
                   <Link href="/projects" className="button button-dark">
                     Explore selected work <ArrowUpRight size={17} />
                   </Link>
-                  <a href="/resume/akhilesh_resume.pdf" className="text-link">
+                  <a href={sitePath("/resume/akhilesh_resume.pdf")} className="text-link">
                     Résumé <ArrowDownRight size={16} />
                   </a>
                 </div>

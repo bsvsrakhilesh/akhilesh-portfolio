@@ -5,6 +5,7 @@ import Footer from "../../../components/layout/Footer";
 import Navbar from "../../../components/layout/Navbar";
 import ProjectVisual from "../../../components/project/ProjectVisual";
 import { getProjectBySlug, projects } from "../../../content/projects";
+import { sitePath } from "../../../lib/sitePath";
 
 type ProjectDetailPageProps = {
   params: Promise<{
@@ -50,13 +51,13 @@ export async function generateMetadata({ params }: ProjectDetailPageProps): Prom
       title: `${project.shortTitle} | Akhilesh`,
       description: project.tagline,
       type: "article",
-      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Akhilesh — AI and systems engineer" }],
+      images: [{ url: sitePath("/opengraph-image.png"), width: 1200, height: 630, alt: "Akhilesh — AI and systems engineer" }],
     },
     twitter: {
       card: "summary_large_image",
       title: `${project.shortTitle} | Akhilesh`,
       description: project.tagline,
-      images: ["/opengraph-image"],
+      images: [sitePath("/opengraph-image.png")],
     },
   };
 }
