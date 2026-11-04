@@ -89,14 +89,14 @@ export default function ProjectCard({ project, index = 1 }: ProjectCardProps) {
 
             <div className="flex shrink-0 items-center gap-3 xl:flex-col xl:items-end">
               <div className="rounded-full border border-cyan-200 bg-cyan-400/8 px-3 py-1 text-[10px] uppercase tracking-[0.24em] text-cyan-800">
-                Dossier Active
+                Methods &amp; outcomes
               </div>
 
               <Link
                 href={`/projects/${project.slug}`}
                 className="shine-mask inline-flex justify-center rounded-full border border-slate-200 bg-white/75 px-5 py-2.5 text-sm font-medium text-slate-900 transition duration-300 hover:border-cyan-300 hover:bg-slate-50"
               >
-                Open Dossier
+                Read case study
               </Link>
             </div>
           </div>
@@ -104,7 +104,7 @@ export default function ProjectCard({ project, index = 1 }: ProjectCardProps) {
           <div className="mt-5 grid gap-3 md:grid-cols-[1.12fr_0.88fr]">
             <div className="rounded-3xl border border-slate-200 bg-white/65 px-4 py-4">
               <p className="text-[11px] uppercase tracking-[0.24em] text-slate-500">
-                Overview
+                What I worked on
               </p>
               <p className="mt-3 text-sm leading-7 text-slate-700">
                 {project.overview}
@@ -113,7 +113,7 @@ export default function ProjectCard({ project, index = 1 }: ProjectCardProps) {
 
             <div className="rounded-3xl border border-slate-200 bg-white/65 px-4 py-4">
               <p className="text-[11px] uppercase tracking-[0.24em] text-slate-500">
-                Stack Snapshot
+                Core tools
               </p>
 
               <div className="mt-3 flex flex-wrap gap-2">

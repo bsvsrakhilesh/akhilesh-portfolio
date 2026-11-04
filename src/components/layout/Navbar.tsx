@@ -25,7 +25,7 @@ export default function Navbar() {
           <span className="wordmark-mark">A</span>
           <span>
             Akhilesh
-            <small>AI / Systems Engineer</small>
+            <small>AI / ML &amp; Data Science</small>
           </span>
         </Link>
 

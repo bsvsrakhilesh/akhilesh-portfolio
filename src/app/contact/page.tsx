@@ -36,24 +36,24 @@ export default function ContactPage() {
       <main id="main-content" className="relative z-10 pt-28 sm:pt-30 md:pt-32">
         <section className="container-shell">
           <RegistryHero
-            eyebrow="Communication Channel"
-            title="Let’s connect and build"
-            highlight="intelligent systems that matter."
-            description="Open to AI/ML engineering roles, applied system-building opportunities, and technical discussions around retrieval, semantic search, computer vision, IoT, and embedded workflows."
+            eyebrow="Get in touch"
+            title="Let’s work on"
+            highlight="useful AI and data problems."
+            description="Open to AI/ML engineering and data science roles, and conversations about retrieval, sensor analytics, audio ML, computer vision and applied systems."
             chips={["Email", "LinkedIn", "Phone"]}
-            sideTitle="Channel Feed"
+            sideTitle="Good conversations"
             sideItems={[
               {
                 code: "CN-01",
-                text: "Best fit for AI/ML engineering, applied AI systems, and architecture-heavy roles.",
+                text: "AI/ML engineering, data science, retrieval and applied research roles.",
               },
               {
                 code: "CN-02",
-                text: "Strong interest in work that connects models, systems, interfaces, and real use.",
+                text: "Problems that connect careful analysis, models and software to real use.",
               },
               {
                 code: "CN-03",
-                text: "Direct email or LinkedIn is the fastest path for serious opportunities.",
+                text: "Email and LinkedIn are direct ways to start a conversation.",
               },
             ]}
           />
@@ -63,7 +63,7 @@ export default function ContactPage() {
           <div className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
             <div className="rounded-4xl border border-slate-200 bg-[linear-gradient(180deg,#ffffff,#f5f9fc)] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
               <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-800">
-                Contact Registry
+                Contact options
               </p>
 
               <div className="mt-6 space-y-4">
@@ -98,7 +98,7 @@ export default function ContactPage() {
 
             <div className="rounded-4xl border border-slate-200 bg-[linear-gradient(180deg,#ffffff,#f5f9fc)] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
               <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-800">
-                Inquiry Terminal
+                Send a message
               </p>
 
               <h2 className="mt-4 text-3xl font-semibold text-slate-900 md:text-4xl">

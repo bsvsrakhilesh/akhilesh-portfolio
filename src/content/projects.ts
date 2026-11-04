@@ -9,7 +9,7 @@ export const projects: Project[] = [
     tagline:
       "Built and deployed an LLM-enabled document ingestion and tagging pipeline using FastAPI, Celery and Redis.",
     category: "Experience",
-    year: "July 2025 - Present",
+    year: "July 2025 - July 2026",
     stack: [
       "FastAPI",
       "Celery",
@@ -24,6 +24,7 @@ export const projects: Project[] = [
       "Semantic Search",
       "Postgres Full-Text Search",
     ],
+    focus: ["AI / ML", "Data science"],
     featured: true,
     status: "Case Study",
     accent: "cyan",
@@ -37,17 +38,19 @@ export const projects: Project[] = [
     problem:
       "Needed a reliable system to ingest multi-format content, parse it cleanly, deduplicate revisions, improve retrieval relevance, and support LLM-based question answering over indexed content.",
     approach: [
-      "Built and deployed an LLM-enabled document ingestion and tagging pipeline (PDF/DOCX/URLs) using FastAPI, Celery and Redis, with robust retries and deduplication via content fingerprinting.",
+      "Built an LLM-enabled document ingestion and tagging pipeline (PDF/DOCX/URLs) using FastAPI, Celery and Redis, with retries and deduplication via content fingerprinting.",
       "Implemented semantic search (embeddings) with PostgreSQL and pgvector, along with keyword search using Postgres Full-Text Search, enabling hybrid retrieval for better relevance.",
       "Built a TypeScript/Node.js backend (using Express & Prisma) to handle document metadata, retrieval APIs, and background workers; integrated secure file upload and parsing workflows.",
       "Created web-to-text extraction using headless browsing and readability parsing to convert dynamic pages into clean, searchable text reliably.",
       "Integrated LLM-based Q&A with retrieval-backed context (RAG), including context assembly, chunking, and prompt safety guardrails.",
+      "Evaluated an audio ML pipeline for traffic sound source apportionment using spectral features, clustering, and transformer-based horn classification.",
       "Built a robust ingestion system using 1400-character chunks with 220-character overlaps and SHA-256 content fingerprinting for deduplication and traceable revisions.",
     ],
     outcome: [
       "PDF, DOCX, and URL content enter one ingestion workflow with retries and content fingerprinting for deduplication.",
       "Semantic and keyword search work together through PostgreSQL, pgvector, and full-text search.",
       "Retrieval-backed question answering uses indexed context rather than an ungrounded prompt alone.",
+      "Audio ML experiments compared spectral features, clustering and transformer classification while documenting limits from overlapping sounds and limited labels.",
     ],
   },
   {
@@ -74,6 +77,7 @@ export const projects: Project[] = [
       "Linear Regression",
       "Visualization",
     ],
+    focus: ["Data science", "Applied systems"],
     featured: true,
     status: "Case Study",
     accent: "emerald",
@@ -88,11 +92,11 @@ export const projects: Project[] = [
       "Needed a reliable sensing and monitoring workflow across multiple environmental and motion-related parameters, along with data processing methods that could support calibration and interpretation.",
     approach: [
       "Engineered and implemented multi-sensor (CO2, Temperature, Humidity, Particulate Matter, Anemometer, Gyroscope, Accelerometer and Geomagnetic) IoT systems by designing circuits, achieving real-time data logging, remote monitoring via web server integration and battery-powered operation.",
-      "Developed and optimised data analysis and visualisation pipelines using Python, employing linear regression, outlier elimination, and smoothing techniques to calibrate sensor measurements.",
+      "Calibrated 17 logger nodes against three LICOR reference datasets in Python, using timestamp harmonisation, outlier filtering and linear regression to analyse sensor error.",
     ],
     outcome: [
       "Environmental and motion sensors fed a real-time logging and remote monitoring workflow.",
-      "Python analysis applied outlier removal, smoothing, and linear regression to sensor measurements.",
+      "Python analysis calibrated 17 logger nodes against three reference datasets using outlier filtering and linear regression.",
       "Battery-powered operation supported use beyond a fixed bench setup.",
     ],
   },
@@ -113,6 +117,7 @@ export const projects: Project[] = [
       "LCD Controller",
       "Electronics",
     ],
+    focus: ["Applied systems"],
     featured: true,
     status: "Case Study",
     accent: "blue",
@@ -128,7 +133,7 @@ export const projects: Project[] = [
     approach: [
       "Grasped the intricacies of programming analog and digital blocks within PSoC microcontrollers, contributing to 2 successful schematic designs that enhanced functionality for LCD applications in integrated environments.",
       "Prototyped application-specific peripherals utilising hardware description languages.",
-      "Engineered a high-performance LCD controller that cut UI load times by 20% and added metro-style scrolling text + image support, significantly enhancing user engagement by 25%.",
+      "Programmed an LCD controller that reduced UI load time by 20% and supported scrolling text and image rendering.",
     ],
     outcome: [
       "Contributed two application schematics for LCD functionality in a PSoC environment.",
@@ -152,6 +157,7 @@ export const projects: Project[] = [
       "Tkinter",
       "Computer Vision",
     ],
+    focus: ["AI / ML", "Applied systems"],
     featured: true,
     status: "Case Study",
     accent: "blue",
@@ -192,6 +198,7 @@ export const projects: Project[] = [
       "Assistive Technology",
       "Feedback Systems",
     ],
+    focus: ["Applied systems"],
     featured: true,
     status: "Case Study",
     accent: "emerald",
@@ -205,14 +212,14 @@ export const projects: Project[] = [
     problem:
       "Conventional smart canes often provide limited coverage or slower feedback, reducing user confidence and mobility in complex navigation environments.",
     approach: [
-      "Redesigned a high-tech mobility aid capable of detecting overhead obstacles, inanimate objects, potholes, and stairs; increased user confidence and mobility by 35% compared to current smart canes through innovative features.",
-      "Launched an innovative feedback system incorporating a buzzer, four vibration motors, and five LED lights, reducing feedback response time by approximately 30%.",
-      "Developed a cost-effective smart cane design using 3D printing, reducing production costs by 10-15%, demonstrating my ability to deliver innovative solutions within budget.",
+      "Redesigned a smart cane to detect overhead obstacles, objects, potholes and stairs using multiple sensors.",
+      "Integrated a buzzer, four vibration motors and five LEDs to provide location-specific obstacle alerts.",
+      "Produced a 3D-printed prototype to reduce component complexity and improve manufacturing feasibility.",
     ],
     outcome: [
       "The prototype detected overhead obstacles, objects, potholes, and stairs.",
-      "Buzzer, vibration motors, and LEDs provided multiple feedback channels; the project reported approximately 30% faster feedback.",
-      "A 3D-printed design reduced estimated production costs by 10–15%.",
+      "Buzzer, vibration motors and LEDs provided location-specific audio and haptic feedback.",
+      "A 3D-printed prototype reduced component complexity and supported manufacturability review.",
     ],
   },
 ];

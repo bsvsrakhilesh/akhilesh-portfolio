@@ -29,24 +29,24 @@ export default function AboutPage() {
       <main id="main-content" className="relative z-10 pt-28 sm:pt-30 md:pt-32">
         <section className="container-shell">
           <RegistryHero
-            eyebrow="Identity Module"
-            title="Engineer first."
-            highlight="Building intelligent systems with real-world intent."
-            description="I am Akhilesh, an AI/ML-focused engineer with experience across LLM-enabled retrieval systems, semantic search, computer vision, multi-sensor IoT, electronics, and embedded workflows. I am most interested in technical work that connects models, systems, and real use."
-            chips={["AI / ML", "Retrieval Systems", "CV / IoT / Embedded"]}
-            sideTitle="Identity Feed"
+            eyebrow="About me"
+            title="AI/ML engineer. Data scientist."
+            highlight="I connect rigorous analysis with dependable systems."
+            description="I am Akhilesh. My work spans grounded retrieval and RAG, Python-based sensor calibration, audio ML, computer vision, and embedded prototypes. I enjoy taking a problem from raw data and model evaluation through to a system people can inspect and use."
+            chips={["Retrieval & RAG", "Data science", "Computer vision"]}
+            sideTitle="Experience snapshot"
             sideItems={[
               {
                 code: "ID-01",
-                text: "Project Scientist experience in LLM ingestion, retrieval, and RAG workflows",
+                text: "Project Scientist at IIT Delhi: document ingestion, hybrid retrieval, grounded RAG and audio ML",
               },
               {
                 code: "ID-02",
-                text: "Research internship experience in multi-sensor IoT, monitoring, and analytics",
+                text: "Research Intern at IIT Delhi: Python calibration across 17 logger nodes and three reference datasets",
               },
               {
                 code: "ID-03",
-                text: "Electronics and embedded foundation through C-DOT and applied hardware projects",
+                text: "Applied projects: YOLOv10 traffic vision and sensor-based assistive technology",
               },
             ]}
           />
@@ -56,18 +56,18 @@ export default function AboutPage() {
           <div className="grid gap-6 lg:grid-cols-[1.02fr_0.98fr]">
             <div className="rounded-4xl border border-slate-200 bg-[linear-gradient(180deg,#ffffff,#f5f9fc)] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
               <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-800">
-                Engineering Direction
+                How I work
               </p>
 
               <h2 className="mt-4 text-3xl font-semibold text-slate-900 md:text-4xl">
-                Systems, not isolated artifacts.
+                From data to useful systems.
               </h2>
 
               <div className="mt-6 space-y-4">
                 {[
-                  "I am drawn to AI work that moves beyond experiments into usable engineering systems.",
-                  "My strongest interest is in architecture-led workflows where models, software, interfaces, or physical systems connect meaningfully.",
-                  "I want to keep growing as an engineer who can move from data and model logic to integration, deployment, and system behavior.",
+                  "I start with the quality, provenance and limits of the data before choosing a model or architecture.",
+                  "I connect analysis to practical workflows: retrieval APIs, calibration pipelines, interfaces and sensor systems.",
+                  "I make outputs inspectable through evaluation, source links, clear assumptions and visible failure cases.",
                 ].map((item) => (
                   <div
                     key={item}
@@ -81,22 +81,22 @@ export default function AboutPage() {
 
             <div className="rounded-4xl border border-slate-200 bg-[linear-gradient(180deg,#ffffff,#f5f9fc)] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
               <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-800">
-                Current Strength Mix
+                Where I work
               </p>
 
               <div className="mt-6 grid gap-4">
                 {[
                   {
-                    label: "AI / ML",
-                    text: "LLM-enabled retrieval, semantic search, embeddings, and architecture-oriented AI workflows.",
+                    label: "Machine learning",
+                    text: "RAG, semantic search, embeddings, audio ML and computer vision workflows.",
                   },
                   {
-                    label: "Systems",
-                    text: "Backend integration, APIs, queues, metadata handling, and engineering structure around AI functionality.",
+                    label: "Data science",
+                    text: "Python analysis, sensor calibration, feature engineering, regression and model evaluation.",
                   },
                   {
-                    label: "Applied Engineering",
-                    text: "IoT systems, sensors, embedded workflows, electronics exposure, and real-world implementation thinking.",
+                    label: "Applied systems",
+                    text: "APIs, queues, databases, IoT sensors and embedded prototypes that carry insights into use.",
                   },
                 ].map((item) => (
                   <div

@@ -101,7 +101,7 @@ export default async function ProjectDetailPage({
                   href="/projects"
                   className="inline-flex rounded-full border border-slate-200 bg-white/75 px-4 py-2 text-[11px] uppercase tracking-[0.24em] text-slate-600 transition duration-300 hover:bg-slate-50 hover:text-slate-900"
                 >
-                  Back to Registry
+                  Back to all work
                 </Link>
 
                 <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -137,7 +137,7 @@ export default async function ProjectDetailPage({
 
                 <div className="mt-8 rounded-4xl border border-slate-200 bg-white/65 px-5 py-5">
                   <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-800">
-                    Dossier Summary
+                    Case study summary
                   </p>
 
                   <div className="mt-5 grid gap-4 sm:grid-cols-3">
@@ -159,7 +159,7 @@ export default async function ProjectDetailPage({
                     </div>
                     <div>
                       <p className="text-[11px] uppercase tracking-[0.24em] text-slate-500">
-                        Access
+                        Format
                       </p>
                       <p className="mt-2 text-sm font-medium text-slate-900">
                         {project.status}
@@ -172,22 +172,22 @@ export default async function ProjectDetailPage({
               <div className="space-y-4">
                 <div className="rounded-4xl border border-slate-200 bg-white/65 px-5 py-5 lg:px-6 lg:py-6">
                   <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-800">
-                    Registry Metadata
+                    At a glance
                   </p>
 
                   <div className="mt-5 space-y-4">
                     {[
                       {
-                        label: "Entry State",
-                        value: "Dossier Active",
+                        label: "Focus areas",
+                        value: project.focus.join(" · "),
                       },
                       {
-                        label: "Classification",
-                        value: "Architecture-Led Showcase",
+                        label: "Core methods",
+                        value: project.stack.slice(0, 3).join(" · "),
                       },
                       {
-                        label: "Public Access",
-                        value: "Codebase not publicly available",
+                        label: "This case study",
+                        value: "Problem, approach and outcomes",
                       },
                     ].map((item) => (
                       <div
@@ -207,7 +207,7 @@ export default async function ProjectDetailPage({
 
                 <div className="rounded-4xl border border-slate-200 bg-white/65 px-5 py-5 lg:px-6 lg:py-6">
                   <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-800">
-                    Stack Surface
+                    Tools &amp; methods
                   </p>
 
                   <div className="mt-5 flex flex-wrap gap-2.5">
@@ -227,7 +227,7 @@ export default async function ProjectDetailPage({
             <div className="relative z-10 border-t border-slate-200 px-4 py-3 sm:px-6 lg:px-8">
               <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
                 <div className="flex flex-wrap items-center gap-3 text-[11px] uppercase tracking-[0.24em] text-slate-500">
-                  <span className="text-cyan-800">Dossier Ready</span>
+                  <span className="text-cyan-800">Case study</span>
                   <span className="hidden h-1 w-1 rounded-full bg-slate-600 sm:block" />
                   <span>Problem</span>
                   <span className="hidden h-1 w-1 rounded-full bg-slate-600 sm:block" />
@@ -265,7 +265,7 @@ export default async function ProjectDetailPage({
                   Technical Framing
                 </p>
                 <p className="mt-4 text-sm leading-8 text-slate-600 md:text-base">
-                  This dossier is structured around engineering clarity: what
+                  This case study is structured around engineering clarity: what
                   the system was trying to solve, how it was approached, and why
                   the work matters. The emphasis is on technical reasoning,
                   architecture, and use-oriented execution.
@@ -350,7 +350,7 @@ export default async function ProjectDetailPage({
 
             <div className="rounded-4xl border border-slate-200 bg-[linear-gradient(180deg,#ffffff,#f5f9fc)] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
               <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-800">
-                Related Registry Entries
+                Related work
               </p>
 
               <h2 className="mt-4 text-3xl font-semibold text-slate-900 md:text-4xl">
@@ -392,7 +392,7 @@ export default async function ProjectDetailPage({
                   href="/projects"
                   className="inline-flex rounded-full border border-slate-200 bg-white/75 px-5 py-3 text-sm font-medium text-slate-900 transition duration-300 hover:bg-slate-50"
                 >
-                  View Full Registry
+                  View all work
                 </Link>
 
                 <Link
@@ -411,14 +411,16 @@ export default async function ProjectDetailPage({
             <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
               <div>
                 <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-800">
-                  End of Dossier
+                  Next steps
                 </p>
                 <h2 className="mt-3 text-3xl font-semibold text-slate-900">
-                  Registry navigation remains active.
+                  Interested in how this work could apply to your team?
                 </h2>
               </div>
 
-              <div className="glow-line w-full lg:max-w-sm" />
+              <Link href="/contact" className="inline-flex w-fit rounded-full border border-cyan-300 bg-cyan-400/10 px-5 py-3 text-sm font-semibold text-cyan-900 transition-colors hover:bg-cyan-300/20">
+                Get in touch
+              </Link>
             </div>
           </div>
         </section>

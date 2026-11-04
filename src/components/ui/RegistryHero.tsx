@@ -89,11 +89,11 @@ export default function RegistryHero({
       <div className="relative z-10 border-t border-slate-200 px-4 py-3 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex flex-wrap items-center gap-3 text-[11px] uppercase tracking-[0.24em] text-slate-500">
-            <span className="text-cyan-800">System Header Online</span>
+            <span className="text-cyan-800">Research</span>
             <span className="hidden h-1 w-1 rounded-full bg-slate-600 sm:block" />
-            <span>Resume Synced</span>
+            <span>Projects</span>
             <span className="hidden h-1 w-1 rounded-full bg-slate-600 sm:block" />
-            <span>Registry Active</span>
+            <span>Methods</span>
           </div>
 
           <div className="glow-line w-full lg:max-w-sm" />

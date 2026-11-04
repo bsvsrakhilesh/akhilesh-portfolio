@@ -30,58 +30,57 @@ export default function ProjectsPage() {
             <div className="relative grid gap-6 px-4 py-5 sm:px-6 sm:py-6 lg:grid-cols-[1.08fr_0.92fr] lg:px-8 lg:py-8">
               <div className="rounded-4xl border border-slate-200 bg-white/65 px-5 py-5 lg:px-6 lg:py-6">
                 <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-800">
-                  Classified Registry
+                  Case studies
                 </p>
 
                 <h1 className="mt-4 max-w-4xl text-4xl font-semibold leading-tight text-slate-900 md:text-5xl xl:text-6xl">
-                  Experience and project dossiers,
+                  Research and applied work,
                   <span className="mt-2 block text-cyan-700">
-                    organized as a technical registry.
+                    explained from data to outcome.
                   </span>
                 </h1>
 
                 <p className="mt-6 max-w-3xl text-sm leading-8 text-slate-600 md:text-base">
-                  A collection of resume-backed work across AI/ML
-                  systems, retrieval engineering, computer vision, IoT,
-                  electronics, and embedded problem solving. Each entry opens a
-                  detailed case study with the system context and engineering
-                  decisions behind the work.
+                  Explore the problems, methods, tools and results behind my
+                  work in retrieval, data science, computer vision and applied
+                  systems. Each case study gives enough context to understand
+                  what I built and how I approached it.
                 </p>
 
                 <div className="mt-7 flex flex-wrap gap-3">
                   <div className="rounded-full border border-slate-200 bg-white/75 px-4 py-2 text-[11px] uppercase tracking-[0.24em] text-slate-600">
-                    03 Experience Modules
+                    03 Professional Roles
                   </div>
                   <div className="rounded-full border border-slate-200 bg-white/75 px-4 py-2 text-[11px] uppercase tracking-[0.24em] text-slate-600">
-                    02 Project Dossiers
+                    02 Applied Projects
                   </div>
                   <div className="rounded-full border border-cyan-300 bg-cyan-400/10 px-4 py-2 text-[11px] uppercase tracking-[0.24em] text-cyan-800">
-                    Resume Synced
+                    Methods &amp; Results
                   </div>
                 </div>
               </div>
 
               <div className="rounded-4xl border border-slate-200 bg-white/65 px-5 py-5 lg:px-6 lg:py-6">
                 <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-800">
-                  Registry Feed
+                  At a glance
                 </p>
 
                 <div className="mt-5 space-y-4">
                   {[
                     {
                       code: "EX-03",
-                      title: "Professional experience modules loaded",
-                      meta: "AI systems + electronics + embedded engineering",
+                      title: "Research and engineering experience",
+                      meta: "IIT Delhi and C-DOT",
                     },
                     {
                       code: "PJ-02",
-                      title: "Major project dossiers indexed",
-                      meta: "computer vision + assistive systems",
+                      title: "Applied prototypes",
+                      meta: "Traffic vision and assistive systems",
                     },
                     {
-                      code: "RG-01",
-                      title: "Architecture-led showcase enabled",
-                      meta: "workflow + technical depth + outcomes",
+                      code: "DS-01",
+                      title: "Data science in practice",
+                      meta: "Calibration, audio ML and evaluation",
                     },
                   ].map((item) => (
                     <div
@@ -109,13 +108,13 @@ export default function ProjectsPage() {
             <div className="relative z-10 border-t border-slate-200 px-4 py-3 sm:px-6 lg:px-8">
               <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
                 <div className="flex flex-wrap items-center gap-3 text-[11px] uppercase tracking-[0.24em] text-slate-500">
-                  <span className="text-cyan-800">Registry Online</span>
+                  <span className="text-cyan-800">Selected work</span>
                   <span className="hidden h-1 w-1 rounded-full bg-slate-600 sm:block" />
                   <span>Experience</span>
                   <span className="hidden h-1 w-1 rounded-full bg-slate-600 sm:block" />
                   <span>Projects</span>
                   <span className="hidden h-1 w-1 rounded-full bg-slate-600 sm:block" />
-                  <span>Dossiers</span>
+                  <span>Case studies</span>
                 </div>
 
                 <div className="glow-line w-full lg:max-w-sm" />
@@ -129,10 +128,10 @@ export default function ProjectsPage() {
             <div className="mb-6 flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
               <div>
                 <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-800">
-                  Experience Registry
+                  Professional experience
                 </p>
                 <h2 className="mt-3 text-3xl font-semibold text-slate-900 md:text-4xl">
-                  Professional experience modules
+                  Research and engineering roles
                 </h2>
               </div>
 
@@ -154,10 +153,10 @@ export default function ProjectsPage() {
             <div className="mb-6 flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
               <div>
                 <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-800">
-                  Project Registry
+                  Applied projects
                 </p>
                 <h2 className="mt-3 text-3xl font-semibold text-slate-900 md:text-4xl">
-                  Major project dossiers
+                  Prototypes in practice
                 </h2>
               </div>
 

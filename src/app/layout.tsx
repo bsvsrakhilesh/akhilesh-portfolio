@@ -9,14 +9,16 @@ const siteUrl =
 export const metadata: Metadata = {
   metadataBase: new URL(new URL(siteUrl).origin),
   title: {
-    default: "Akhilesh | AI/ML Systems Engineer",
+    default: "Akhilesh | AI/ML Engineer & Data Scientist",
     template: "%s | Akhilesh",
   },
   description:
-    "AI/ML engineer portfolio focused on retrieval systems, semantic search, computer vision, IoT, embedded systems, and architecture-led engineering workflows.",
+    "AI/ML engineer and data scientist working across grounded RAG, sensor calibration, audio ML, computer vision, and applied systems.",
   keywords: [
     "Akhilesh",
     "AI ML Engineer",
+    "Data Scientist",
+    "Data Science",
     "RAG",
     "Semantic Search",
     "Computer Vision",
@@ -25,16 +27,16 @@ export const metadata: Metadata = {
     "Portfolio",
   ],
   openGraph: {
-    title: "Akhilesh | AI/ML Systems Engineer",
+    title: "Akhilesh | AI/ML Engineer & Data Scientist",
     description:
-      "AI/ML engineer portfolio focused on retrieval systems, semantic search, computer vision, IoT, embedded systems, and architecture-led engineering workflows.",
+      "AI/ML engineer and data scientist working across grounded RAG, sensor calibration, audio ML, computer vision, and applied systems.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Akhilesh | AI/ML Systems Engineer",
+    title: "Akhilesh | AI/ML Engineer & Data Scientist",
     description:
-      "AI/ML engineer portfolio focused on retrieval systems, semantic search, computer vision, IoT, embedded systems, and architecture-led engineering workflows.",
+      "AI/ML engineer and data scientist working across grounded RAG, sensor calibration, audio ML, computer vision, and applied systems.",
   },
 };
 

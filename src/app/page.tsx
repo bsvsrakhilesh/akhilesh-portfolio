@@ -12,18 +12,36 @@ import { sitePath } from "../lib/sitePath";
 const disciplines = [
   {
     number: "01",
-    title: "Machine intelligence",
-    text: "Retrieval, semantic search and RAG systems engineered for real-world information—not demos.",
+    title: "AI / ML engineering",
+    text: "Hybrid retrieval, grounded RAG and model workflows built around traceable evidence.",
   },
   {
     number: "02",
-    title: "Perception at the edge",
-    text: "Computer vision and sensor workflows that bring models into streets, devices and physical environments.",
+    title: "Data science & evaluation",
+    text: "Python analysis, sensor calibration and audio ML that make noisy data interpretable.",
   },
   {
     number: "03",
-    title: "Systems engineering",
-    text: "The backend architecture, queues, data layers and observability required to make intelligence dependable.",
+    title: "Applied intelligence",
+    text: "Computer vision, APIs and embedded prototypes that connect analysis to real use.",
+  },
+];
+
+const proofPoints = [
+  {
+    label: "Retrieval & RAG",
+    detail: "Hybrid search with pgvector, citation checks and source provenance.",
+    href: "/projects/project-scientist-iit-delhi-cas-tripc",
+  },
+  {
+    label: "Data science",
+    detail: "Python calibration for 17 logger nodes using three reference datasets.",
+    href: "/projects/research-intern-iit-delhi-electronics-data-analysis-ml",
+  },
+  {
+    label: "Computer vision",
+    detail: "YOLOv10 vehicle counting for an adaptive traffic signal prototype.",
+    href: "/projects/density-based-intelligent-traffic-control-system",
   },
 ];
 
@@ -43,7 +61,7 @@ export default function Home() {
         <section className="hero-section">
           <div className="hero-kicker">
             <span>Portfolio / 2026</span>
-            <span>New Delhi, India</span>
+            <span>Faridabad, India</span>
           </div>
 
           <div className="hero-layout">
@@ -54,16 +72,16 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
-                AI / ML &amp; systems engineer
+                AI / ML engineer · data scientist
               </motion.p>
               <motion.h1
                 initial={{ opacity: 0, y: 34 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.85, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
               >
-                I build systems
-                <span>that make intelligence</span>
-                <em>useful.</em>
+                From complex data
+                <span>to useful</span>
+                <em>intelligence.</em>
               </motion.h1>
 
               <motion.div
@@ -73,8 +91,9 @@ export default function Home() {
                 transition={{ duration: 0.7, delay: 0.34 }}
               >
                 <p>
-                  From retrieval infrastructure to edge perception, I connect
-                  models, data and devices into systems built for actual use.
+                  I build and evaluate machine learning workflows across
+                  documents, sensor data, audio and images, then connect them
+                  to dependable software and hardware.
                 </p>
                 <div className="hero-actions">
                   <Link href="/projects" className="button button-dark">
@@ -100,7 +119,23 @@ export default function Home() {
           <div className="hero-footnote">
             <span>Scroll to inspect</span>
             <div />
-            <span>Retrieval / Vision / IoT / Embedded</span>
+            <span>Retrieval / Data science / Vision / Edge</span>
+          </div>
+        </section>
+
+        <section className="proof-section" aria-labelledby="proof-title">
+          <div className="proof-heading">
+            <p>Selected evidence</p>
+            <h2 id="proof-title">Work you can inspect.</h2>
+          </div>
+          <div className="proof-grid">
+            {proofPoints.map((point, index) => (
+              <Link className="proof-card" href={point.href} key={point.label}>
+                <span className="proof-index">0{index + 1} / {point.label}</span>
+                <strong>{point.detail}</strong>
+                <span className="proof-action">View the case study <ArrowUpRight size={16} aria-hidden="true" /></span>
+              </Link>
+            ))}
           </div>
         </section>
 
@@ -111,8 +146,7 @@ export default function Home() {
           </motion.div>
           <motion.div {...reveal} className="manifesto-copy">
             <p>
-              I work where <em>machine learning</em> meets the constraints of
-              software, hardware and people.
+              I connect <em>data and models</em> to the systems people actually use.
             </p>
           </motion.div>
           <div className="discipline-list">
@@ -135,21 +169,22 @@ export default function Home() {
 
         <section className="signal-section">
           <motion.div {...reveal} className="signal-label">
-            <span className="signal-dot" /> Current signal
+            <span className="signal-dot" /> Recent research
           </motion.div>
           <motion.div {...reveal} className="signal-copy">
-            <h2>Building retrieval systems at IIT Delhi.</h2>
+            <h2>Making AI work inspectable at IIT Delhi.</h2>
             <p>
-              Designing document ingestion, hybrid search and retrieval-backed
-              AI workflows with production reliability in mind.
+              My project scientist work combined document ingestion, hybrid
+              search, citation-grounded answers and audio ML evaluation. The
+              common thread was making data and model outputs traceable.
             </p>
             <Link href="/about" className="text-link">
               More about my path <ArrowUpRight size={16} />
             </Link>
           </motion.div>
           <div className="signal-code" aria-hidden="true">
-            <span>LLM</span><span>RAG</span><span>PGVECTOR</span>
-            <span>FASTAPI</span><span>CELERY</span><span>REDIS</span>
+            <span>RAG</span><span>PGVECTOR</span><span>AUDIO ML</span>
+            <span>PYTHON</span><span>FASTAPI</span><span>POSTGRESQL</span>
           </div>
         </section>
       </main>

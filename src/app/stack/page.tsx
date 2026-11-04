@@ -9,18 +9,23 @@ const stackGroups = [
     items: ["Python", "SQL", "JavaScript", "TypeScript"],
   },
   {
+    title: "Data Science & Evaluation",
+    code: "DS-02",
+    items: ["Pandas", "NumPy", "SciPy", "scikit-learn", "Linear Regression", "Feature Engineering", "Matplotlib", "Plotly"],
+  },
+  {
     title: "Frontend & Backend",
-    code: "FS-02",
+    code: "FS-03",
     items: ["React.js", "Node.js", "Express.js", "REST APIs"],
   },
   {
     title: "Data & Infrastructure",
-    code: "DI-03",
+    code: "DI-04",
     items: ["PostgreSQL", "Prisma ORM", "Celery", "Redis Queue", "Docker"],
   },
   {
     title: "AI / NLP / Retrieval",
-    code: "AI-04",
+    code: "AI-05",
     items: [
       "Machine Learning",
       "Natural Language Processing",
@@ -38,7 +43,7 @@ const stackGroups = [
   },
   {
     title: "Computer Vision / Audio",
-    code: "CV-05",
+    code: "CV-06",
     items: [
       "Computer Vision",
       "OpenCV",
@@ -49,7 +54,7 @@ const stackGroups = [
   },
   {
     title: "IoT / Embedded / Electronics",
-    code: "HW-06",
+    code: "HW-07",
     items: [
       "IoT Systems",
       "Arduino",
@@ -74,24 +79,24 @@ export default function StackPage() {
       <main id="main-content" className="relative z-10 pt-28 sm:pt-30 md:pt-32">
         <section className="container-shell">
           <RegistryHero
-            eyebrow="Systems Stack"
-            title="Tools, frameworks, and systems"
+            eyebrow="Skills and tools"
+            title="Methods and tools"
             highlight="behind the work."
-            description="This stack reflects the actual technologies behind my work in AI/ML engineering, retrieval systems, APIs, data workflows, computer vision, IoT, and embedded applications."
-            chips={["AI / ML", "Retrieval", "APIs", "IoT / Embedded"]}
-            sideTitle="Stack Feed"
+            description="The tools I use across Python data analysis, machine learning evaluation, retrieval systems, APIs, computer vision and applied hardware projects."
+            chips={["Python & SQL", "Data science", "Retrieval & RAG", "Applied systems"]}
+            sideTitle="How I use them"
             sideItems={[
               {
                 code: "ST-01",
-                text: "Built around Python, AI workflows, APIs, and architecture-oriented engineering.",
+                text: "Python, Pandas and regression for sensor calibration and data analysis.",
               },
               {
                 code: "ST-02",
-                text: "Combines software systems with sensing, monitoring, and embedded device work.",
+                text: "PostgreSQL, pgvector and APIs for retrieval-backed applications.",
               },
               {
                 code: "ST-03",
-                text: "Focused on practical tools that support deployment, integration, and system clarity.",
+                text: "OpenCV, audio tools and embedded devices for applied ML prototypes.",
               },
             ]}
           />

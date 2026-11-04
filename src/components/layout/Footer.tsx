@@ -38,9 +38,9 @@ export default function Footer() {
                 Intelligent systems, designed with intent.
               </h2>
               <p className="mt-4 max-w-xl text-sm leading-7 text-slate-600 md:text-base">
-                This portfolio presents AI/ML, retrieval, computer vision, IoT,
-                and embedded work as one connected engineering system rather
-                than a collection of unrelated projects.
+                This portfolio brings together AI/ML, data science, retrieval,
+                computer vision, IoT and embedded work through the problems,
+                methods and outcomes behind each project.
               </p>
 
               <div className="mt-5 inline-flex items-center gap-3 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-4 py-2 text-[11px] uppercase tracking-[0.24em] text-emerald-800">

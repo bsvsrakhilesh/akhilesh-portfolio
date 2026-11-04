@@ -15,7 +15,7 @@ const nodes = [
     href: "/projects/project-scientist-iit-delhi-cas-tripc",
   },
   {
-    label: "Reason",
+    label: "Ground",
     x: 72,
     y: 18,
     title: "Ground answers in retrieved context",
@@ -23,19 +23,19 @@ const nodes = [
     href: "/projects/project-scientist-iit-delhi-cas-tripc",
   },
   {
-    label: "Sense",
-    x: 82,
-    y: 68,
-    title: "Connect sensors to analysis",
-    detail: "Environmental and motion sensors feed logging, monitoring, and calibration.",
+    label: "Calibrate",
+    x: 67,
+    y: 69,
+    title: "Turn sensor readings into evidence",
+    detail: "Python calibration compared 17 logger nodes with three reference datasets.",
     href: "/projects/research-intern-iit-delhi-electronics-data-analysis-ml",
   },
   {
-    label: "Deploy",
+    label: "Prototype",
     x: 30,
     y: 80,
-    title: "Run vision at the edge",
-    detail: "A Raspberry Pi prototype turns vehicle detection into adaptive signal timing.",
+    title: "Test vision at the edge",
+    detail: "A Raspberry Pi prototype used vehicle detection to inform signal timing.",
     href: "/projects/density-based-intelligent-traffic-control-system",
   },
 ] as const;
@@ -46,7 +46,7 @@ export default function SystemMap() {
 
   return (
     <div className="system-map-wrap">
-      <div className="system-map" role="group" aria-label="Explore engineering workflows">
+      <div className="system-map" role="group" aria-label="Explore AI and data workflows">
         <div className="map-grid" aria-hidden="true" />
         <motion.div
           className="map-orbit orbit-one"
@@ -61,8 +61,8 @@ export default function SystemMap() {
           transition={{ duration: 36, repeat: Infinity, ease: "linear" }}
         />
         <svg className="map-lines" viewBox="0 0 100 100" aria-hidden="true">
-          <path d="M18 24 L72 18 L82 68 L30 80 Z" />
-          <path d="M18 24 L82 68" />
+          <path d="M18 24 L72 18 L67 69 L30 80 Z" />
+          <path d="M18 24 L67 69" />
           <path d="M72 18 L30 80" />
         </svg>
         {nodes.map((node) => (
@@ -80,8 +80,8 @@ export default function SystemMap() {
         ))}
         <div className="map-core" aria-hidden="true">
           <span className="core-index">AK—01</span>
-          <strong>Useful<br />intelligence</strong>
-          <span className="core-caption">Systems that connect models<br />to the physical world.</span>
+          <strong>Data to<br />decisions</strong>
+          <span className="core-caption">Models, data and systems<br />in one workflow.</span>
         </div>
         <div className="map-coordinate top" aria-hidden="true">28.6139° N</div>
         <div className="map-coordinate bottom" aria-hidden="true">77.2090° E</div>

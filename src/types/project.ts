@@ -6,6 +6,7 @@ export type Project = {
   category: string;
   year: string;
   stack: string[];
+  focus: ("AI / ML" | "Data science" | "Applied systems")[];
   featured: boolean;
   status: string;
   overview: string;
