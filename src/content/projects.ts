@@ -5,6 +5,7 @@ export const projects: Project[] = [
     slug: "project-scientist-iit-delhi-cas-tripc",
     title:
       "Project Scientist, Centre for Atmospheric Sciences (CAS) & Transportation Research and Injury Prevention Centre (TRIPC), Indian Institute of Technology Delhi",
+    shortTitle: "LLM retrieval systems at IIT Delhi",
     tagline:
       "Built and deployed an LLM-enabled document ingestion and tagging pipeline using FastAPI, Celery and Redis.",
     category: "Experience",
@@ -24,9 +25,13 @@ export const projects: Project[] = [
       "Postgres Full-Text Search",
     ],
     featured: true,
-    status: "Private Case Study",
+    status: "Case Study",
     accent: "cyan",
-    image: "/images/projects/iit-delhi-rag.jpg",
+    visual: {
+      label: "Retrieval architecture",
+      steps: ["PDF / DOCX / URL", "Queue + parse", "Hybrid index", "RAG answers"],
+      caption: "A simplified view of the ingestion and retrieval workflow described below.",
+    },
     overview:
       "Built and deployed an LLM-enabled document ingestion and tagging pipeline for PDF, DOCX and URL content with retries, deduplication, hybrid retrieval, secure parsing workflows, and retrieval-backed question answering support.",
     problem:
@@ -40,15 +45,16 @@ export const projects: Project[] = [
       "Built a robust ingestion system using 1400-character chunks with 220-character overlaps and SHA-256 content fingerprinting for deduplication and traceable revisions.",
     ],
     outcome: [
-      "Strong flagship portfolio case study in LLM systems, retrieval engineering, and backend architecture.",
-      "Shows production-oriented AI engineering beyond notebook-only ML work.",
-      "Demonstrates end-to-end workflow thinking across ingestion, indexing, retrieval, and question answering.",
+      "PDF, DOCX, and URL content enter one ingestion workflow with retries and content fingerprinting for deduplication.",
+      "Semantic and keyword search work together through PostgreSQL, pgvector, and full-text search.",
+      "Retrieval-backed question answering uses indexed context rather than an ungrounded prompt alone.",
     ],
   },
   {
     slug: "research-intern-iit-delhi-electronics-data-analysis-ml",
     title:
       "Indian Institute of Technology Delhi | Research Intern in Electronics and Data Analysis using Machine Learning",
+    shortTitle: "Multi-sensor IoT research at IIT Delhi",
     tagline:
       "Engineered and implemented multi-sensor IoT systems with real-time data logging, remote monitoring, and calibration-oriented analysis.",
     category: "Experience",
@@ -69,9 +75,13 @@ export const projects: Project[] = [
       "Visualization",
     ],
     featured: true,
-    status: "Private Case Study",
+    status: "Case Study",
     accent: "emerald",
-    image: "/images/projects/multi-sensor-iot.jpg",
+    visual: {
+      label: "Sensor workflow",
+      steps: ["Sensors", "Data logging", "Remote view", "Calibration"],
+      caption: "Environmental and motion readings flow into monitoring and analysis.",
+    },
     overview:
       "Engineered and implemented multi-sensor IoT systems by designing circuits and enabling real-time data logging, remote monitoring, and analysis pipelines for calibration and performance evaluation.",
     problem:
@@ -81,15 +91,16 @@ export const projects: Project[] = [
       "Developed and optimised data analysis and visualisation pipelines using Python, employing linear regression, outlier elimination, and smoothing techniques to calibrate sensor measurements.",
     ],
     outcome: [
-      "Shows strong hardware-plus-data engineering capability.",
-      "Adds depth beyond pure software by combining sensing, electronics, logging, and analytics.",
-      "Strengthens your portfolio story around intelligent real-world systems.",
+      "Environmental and motion sensors fed a real-time logging and remote monitoring workflow.",
+      "Python analysis applied outlier removal, smoothing, and linear regression to sensor measurements.",
+      "Battery-powered operation supported use beyond a fixed bench setup.",
     ],
   },
   {
     slug: "electronics-trainee-cdot-new-delhi",
     title:
       "Centre for Development of Telematics, New Delhi | Electronics Trainee",
+    shortTitle: "Embedded display engineering at C-DOT",
     tagline:
       "Worked on PSoC microcontrollers, LCD application schematics, HDL-based peripherals, and a high-performance LCD controller.",
     category: "Experience",
@@ -103,9 +114,13 @@ export const projects: Project[] = [
       "Electronics",
     ],
     featured: true,
-    status: "Private Case Study",
+    status: "Case Study",
     accent: "blue",
-    image: "/images/projects/cdot-electronics.jpg",
+    visual: {
+      label: "Embedded display system",
+      steps: ["PSoC blocks", "HDL peripherals", "LCD controller", "Display output"],
+      caption: "A simplified sequence from controller logic to LCD output.",
+    },
     overview:
       "Worked on programming analog and digital blocks within PSoC microcontrollers, application-specific peripherals, and LCD-oriented embedded design.",
     problem:
@@ -116,14 +131,15 @@ export const projects: Project[] = [
       "Engineered a high-performance LCD controller that cut UI load times by 20% and added metro-style scrolling text + image support, significantly enhancing user engagement by 25%.",
     ],
     outcome: [
-      "Adds a strong embedded-electronics foundation to the portfolio.",
-      "Shows low-level systems exposure alongside AI/ML work.",
-      "Strengthens the breadth of your engineering profile.",
+      "Contributed two application schematics for LCD functionality in a PSoC environment.",
+      "Prototyped application-specific peripherals with hardware description languages.",
+      "The LCD controller work reported a 20% reduction in UI load time.",
     ],
   },
   {
     slug: "density-based-intelligent-traffic-control-system",
     title: "DENSITY-BASED INTELLIGENT TRAFFIC CONTROL SYSTEM",
+    shortTitle: "Adaptive traffic control with computer vision",
     tagline:
       "An AI driven system using Raspberry Pi 4, YOLOv10, and OpenCV to adjust traffic signals based on real-time vehicle density dynamically.",
     category: "Project",
@@ -137,9 +153,13 @@ export const projects: Project[] = [
       "Computer Vision",
     ],
     featured: true,
-    status: "Private Case Study",
+    status: "Case Study",
     accent: "blue",
-    image: "/images/projects/traffic-control.jpg",
+    visual: {
+      label: "Traffic vision loop",
+      steps: ["Camera feed", "YOLOv10", "Vehicle density", "Signal timing"],
+      caption: "Vehicle detection informs the adaptive timing concept.",
+    },
     overview:
       "Developed a traffic-control concept that uses computer vision-based vehicle counting and adaptive signal logic to respond to real-time density conditions.",
     problem:
@@ -150,15 +170,16 @@ export const projects: Project[] = [
       "Researched edge-computing techniques for running deep learning models on low-power hardware, proposing future IoT and V2X communication enhancements for smart city integration.",
     ],
     outcome: [
-      "Strong computer vision case study with an edge-AI angle.",
-      "Easy to present visually through workflow diagrams and system snapshots.",
-      "Connects AI directly with a smart-city application scenario.",
+      "Vehicle counting output informed adaptive signal timing logic.",
+      "A Tkinter interface visualized traffic density for inspection.",
+      "The Raspberry Pi 4 prototype explored computer vision on low-power hardware.",
     ],
   },
   {
     slug: "smart-cane-for-visually-impaired-people-iit-roorkee-sponsored",
     title:
       "SMART CANE FOR VISUALLY IMPAIRED PEOPLE - AN IIT ROORKEE SPONSORED PROJECT",
+    shortTitle: "Smart cane assistive prototype",
     tagline:
       "A high-tech mobility aid capable of detecting overhead obstacles, inanimate objects, potholes, and stairs.",
     category: "Project",
@@ -172,9 +193,13 @@ export const projects: Project[] = [
       "Feedback Systems",
     ],
     featured: true,
-    status: "Private Case Study",
+    status: "Case Study",
     accent: "emerald",
-    image: "/images/projects/smart-cane.jpg",
+    visual: {
+      label: "Assistive feedback loop",
+      steps: ["Terrain sensing", "Obstacle logic", "Haptic + audio", "User cues"],
+      caption: "A simplified view of detection and multimodal feedback.",
+    },
     overview:
       "Developed an assistive mobility concept focused on obstacle awareness, terrain sensing, user feedback, and cost-effective prototyping.",
     problem:
@@ -185,9 +210,9 @@ export const projects: Project[] = [
       "Developed a cost-effective smart cane design using 3D printing, reducing production costs by 10-15%, demonstrating my ability to deliver innovative solutions within budget.",
     ],
     outcome: [
-      "Adds a human-centered and socially meaningful system to the portfolio.",
-      "Shows breadth in embedded design, prototyping, and product thinking.",
-      "Balances your AI/software work with assistive hardware innovation.",
+      "The prototype detected overhead obstacles, objects, potholes, and stairs.",
+      "Buzzer, vibration motors, and LEDs provided multiple feedback channels; the project reported approximately 30% faster feedback.",
+      "A 3D-printed design reduced estimated production costs by 10–15%.",
     ],
   },
 ];

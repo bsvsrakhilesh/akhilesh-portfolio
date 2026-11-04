@@ -38,7 +38,7 @@ export default function Home() {
     <div className="site-root">
       <Navbar />
 
-      <main>
+      <main id="main-content">
         <section className="hero-section">
           <div className="hero-kicker">
             <span>Portfolio / 2026</span>

@@ -1,6 +1,7 @@
 import Footer from "../../components/layout/Footer";
 import Navbar from "../../components/layout/Navbar";
 import RegistryHero from "../../components/ui/RegistryHero";
+import ContactForm from "../../components/contact/ContactForm";
 
 const contactCards = [
   {
@@ -32,7 +33,7 @@ export default function ContactPage() {
       <div className="hero-orb hero-orb-blue -right-24 top-24 h-64 w-64 sm:-right-28 sm:h-72 sm:w-72 lg:-right-36 lg:h-96 lg:w-96" />
       <div className="hero-orb hero-orb-emerald -bottom-20 left-[24%] h-56 w-56 sm:h-64 sm:w-64 lg:-bottom-28 lg:h-80 lg:w-80" />
 
-      <main className="relative z-10 pt-28 sm:pt-30 md:pt-32">
+      <main id="main-content" className="relative z-10 pt-28 sm:pt-30 md:pt-32">
         <section className="container-shell">
           <RegistryHero
             eyebrow="Communication Channel"
@@ -60,8 +61,8 @@ export default function ContactPage() {
 
         <section className="container-shell pb-8 pt-8 md:pb-10 md:pt-10">
           <div className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
-            <div className="rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(8,12,24,0.80),rgba(5,9,19,0.74))] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
-              <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-200/65">
+            <div className="rounded-4xl border border-slate-200 bg-[linear-gradient(180deg,#ffffff,#f5f9fc)] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
+              <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-800">
                 Contact Registry
               </p>
 
@@ -76,18 +77,18 @@ export default function ContactPage() {
                     rel={
                       item.href.startsWith("https") ? "noreferrer" : undefined
                     }
-                    className="block rounded-3xl border border-white/8 bg-white/4 px-4 py-4 transition duration-300 hover:border-cyan-300/18 hover:bg-white/6"
+                    className="block rounded-3xl border border-slate-200 bg-white/65 px-4 py-4 transition duration-300 hover:border-cyan-300 hover:bg-white/90"
                   >
                     <div className="flex items-center justify-between gap-3">
-                      <p className="text-[11px] uppercase tracking-[0.24em] text-cyan-200/75">
+                      <p className="text-[11px] uppercase tracking-[0.24em] text-cyan-800">
                         {item.code}
                       </p>
                       <span className="signal-flicker h-2 w-2 rounded-full bg-cyan-400" />
                     </div>
-                    <p className="mt-2 text-sm font-medium text-white">
+                    <p className="mt-2 text-sm font-medium text-slate-900">
                       {item.label}
                     </p>
-                    <p className="mt-2 break-all text-sm leading-7 text-slate-300">
+                    <p className="mt-2 break-all text-sm leading-7 text-slate-600">
                       {item.value}
                     </p>
                   </a>
@@ -95,53 +96,16 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(8,12,24,0.80),rgba(5,9,19,0.74))] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
-              <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-200/65">
+            <div className="rounded-4xl border border-slate-200 bg-[linear-gradient(180deg,#ffffff,#f5f9fc)] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
+              <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-800">
                 Inquiry Terminal
               </p>
 
-              <h2 className="mt-4 text-3xl font-semibold text-white md:text-4xl">
+              <h2 className="mt-4 text-3xl font-semibold text-slate-900 md:text-4xl">
                 Send a direct message.
               </h2>
 
-              <form className="mt-6 grid gap-4">
-                <div className="grid gap-4 md:grid-cols-2">
-                  <input
-                    type="text"
-                    placeholder="Your name"
-                    className="rounded-3xl border border-white/10 bg-white/5 px-5 py-4 text-sm text-white outline-none transition duration-300 placeholder:text-slate-500 focus:border-cyan-300/25 focus:bg-white/8"
-                  />
-                  <input
-                    type="email"
-                    placeholder="Your email"
-                    className="rounded-3xl border border-white/10 bg-white/5 px-5 py-4 text-sm text-white outline-none transition duration-300 placeholder:text-slate-500 focus:border-cyan-300/25 focus:bg-white/8"
-                  />
-                </div>
-
-                <input
-                  type="text"
-                  placeholder="Subject"
-                  className="rounded-3xl border border-white/10 bg-white/5 px-5 py-4 text-sm text-white outline-none transition duration-300 placeholder:text-slate-500 focus:border-cyan-300/25 focus:bg-white/8"
-                />
-
-                <textarea
-                  placeholder="Tell me about the opportunity or collaboration..."
-                  rows={7}
-                  className="resize-none rounded-3xl border border-white/10 bg-white/5 px-5 py-4 text-sm text-white outline-none transition duration-300 placeholder:text-slate-500 focus:border-cyan-300/25 focus:bg-white/8"
-                />
-
-                <a
-                  href="mailto:bsvsrakhilesh01@gmail.com?subject=Opportunity%20for%20Akhilesh"
-                  className="shine-mask inline-flex w-fit rounded-full border border-cyan-300/25 bg-cyan-400/10 px-6 py-3 text-sm font-medium text-cyan-100 transition duration-300 hover:-translate-y-0.5 hover:bg-cyan-300/15"
-                >
-                  Start Email Draft
-                </a>
-
-                <p className="mt-5 text-xs leading-6 text-slate-500">
-                  This opens a direct email draft so the contact experience is
-                  functional from day one.
-                </p>
-              </form>
+              <ContactForm />
             </div>
           </div>
         </section>

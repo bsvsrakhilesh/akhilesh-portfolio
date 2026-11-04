@@ -1,6 +1,7 @@
 export type Project = {
   slug: string;
   title: string;
+  shortTitle: string;
   tagline: string;
   category: string;
   year: string;
@@ -12,5 +13,9 @@ export type Project = {
   approach: string[];
   outcome: string[];
   accent?: "cyan" | "blue" | "emerald";
-  image?: string;
+  visual: {
+    label: string;
+    steps: [string, string, string, string];
+    caption: string;
+  };
 };

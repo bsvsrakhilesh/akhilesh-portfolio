@@ -334,27 +334,27 @@ function ReactorGroup() {
 
 export default function HeroCanvas() {
   return (
-    <div className="panel-glow-edge relative h-96 w-full overflow-hidden rounded-4xl border border-white/10 bg-transparent sm:h-112 lg:h-136">
+    <div className="panel-glow-edge relative h-96 w-full overflow-hidden rounded-4xl border border-slate-200 bg-transparent sm:h-112 lg:h-136">
       <div className="hero-vignette" />
       <div className="hero-scanlines" />
       <div className="hero-beam" />
       <div className="hud-corners" />
       <div className="rotating-halo" />
 
-      <div className="pointer-events-none absolute left-4 top-4 z-20 rounded-full border border-cyan-300/20 bg-cyan-400/10 px-3 py-1 text-[10px] uppercase tracking-[0.28em] text-cyan-200">
+      <div className="pointer-events-none absolute left-4 top-4 z-20 rounded-full border border-cyan-300 bg-cyan-400/10 px-3 py-1 text-[10px] uppercase tracking-[0.28em] text-cyan-800">
         retrieval core
       </div>
 
-      <div className="pointer-events-none absolute right-4 top-4 z-20 rounded-full border border-blue-300/20 bg-blue-400/10 px-3 py-1 text-[10px] uppercase tracking-[0.28em] text-blue-200 signal-flicker">
+      <div className="pointer-events-none absolute right-4 top-4 z-20 rounded-full border border-blue-300 bg-blue-400/10 px-3 py-1 text-[10px] uppercase tracking-[0.28em] text-blue-800 signal-flicker">
         vision rail
       </div>
 
-      <div className="pointer-events-none absolute bottom-4 left-4 z-20 flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] uppercase tracking-[0.24em] text-slate-300">
+      <div className="pointer-events-none absolute bottom-4 left-4 z-20 flex items-center gap-2 rounded-full border border-slate-200 bg-white/75 px-3 py-1 text-[10px] uppercase tracking-[0.24em] text-slate-600">
         <span className="h-2 w-2 rounded-full bg-emerald-400" />
         sensor systems
       </div>
 
-      <div className="pointer-events-none absolute bottom-4 right-4 z-20 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] uppercase tracking-[0.24em] text-slate-300">
+      <div className="pointer-events-none absolute bottom-4 right-4 z-20 rounded-full border border-slate-200 bg-white/75 px-3 py-1 text-[10px] uppercase tracking-[0.24em] text-slate-600">
         architecture-led
       </div>
 

@@ -1,18 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import MotionPreferences from "../components/MotionPreferences";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-space-grotesk",
-});
-
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ||
+      (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000"),
+  ),
   title: {
     default: "Akhilesh | AI/ML Systems Engineer",
     template: "%s | Akhilesh",
@@ -44,7 +38,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f1efe8",
+  themeColor: "#f7f8f5",
   colorScheme: "light",
 };
 
@@ -55,8 +49,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
-      <body className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}>
-        {children}
+      <body className="antialiased">
+        <a className="skip-link" href="#main-content">Skip to content</a>
+        <MotionPreferences>{children}</MotionPreferences>
       </body>
     </html>
   );

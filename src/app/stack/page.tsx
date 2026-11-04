@@ -71,7 +71,7 @@ export default function StackPage() {
       <div className="hero-orb hero-orb-blue -right-24 top-24 h-64 w-64 sm:-right-28 sm:h-72 sm:w-72 lg:-right-36 lg:h-96 lg:w-96" />
       <div className="hero-orb hero-orb-emerald -bottom-20 left-[24%] h-56 w-56 sm:h-64 sm:w-64 lg:-bottom-28 lg:h-80 lg:w-80" />
 
-      <main className="relative z-10 pt-28 sm:pt-30 md:pt-32">
+      <main id="main-content" className="relative z-10 pt-28 sm:pt-30 md:pt-32">
         <section className="container-shell">
           <RegistryHero
             eyebrow="Systems Stack"
@@ -102,19 +102,19 @@ export default function StackPage() {
             {stackGroups.map((group) => (
               <div
                 key={group.title}
-                className="rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(8,12,24,0.80),rgba(5,9,19,0.74))] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8"
+                className="rounded-4xl border border-slate-200 bg-[linear-gradient(180deg,#ffffff,#f5f9fc)] px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8"
               >
                 <div className="flex items-center justify-between gap-3">
                   <div>
-                    <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-200/65">
+                    <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-800">
                       {group.code}
                     </p>
-                    <h2 className="mt-3 text-2xl font-semibold text-white md:text-3xl">
+                    <h2 className="mt-3 text-2xl font-semibold text-slate-900 md:text-3xl">
                       {group.title}
                     </h2>
                   </div>
 
-                  <div className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-slate-400">
+                  <div className="rounded-full border border-slate-200 bg-white/75 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-slate-500">
                     Active
                   </div>
                 </div>
@@ -123,7 +123,7 @@ export default function StackPage() {
                   {group.items.map((item) => (
                     <span
                       key={item}
-                      className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200 transition duration-300 hover:border-cyan-300/20 hover:bg-white/10"
+                      className="rounded-full border border-slate-200 bg-white/75 px-4 py-2 text-sm text-slate-700 transition duration-300 hover:border-cyan-300 hover:bg-slate-50"
                     >
                       {item}
                     </span>

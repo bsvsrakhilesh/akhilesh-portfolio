@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 import type { Project } from "../../types/project";
+import ProjectVisual from "./ProjectVisual";
 
 type ProjectCardProps = {
   project: Project;
@@ -11,19 +12,19 @@ type ProjectCardProps = {
 
 const accentMap = {
   cyan: {
-    badge: "border-cyan-300/20 bg-cyan-400/10 text-cyan-200",
+    badge: "border-cyan-300 bg-cyan-400/10 text-cyan-800",
     dot: "bg-cyan-400",
     line: "from-cyan-300/80 via-cyan-300/20 to-transparent",
     glow: "shadow-[0_0_34px_rgba(34,211,238,0.10)]",
   },
   blue: {
-    badge: "border-blue-300/20 bg-blue-400/10 text-blue-200",
+    badge: "border-blue-300 bg-blue-400/10 text-blue-800",
     dot: "bg-blue-400",
     line: "from-blue-300/80 via-blue-300/20 to-transparent",
     glow: "shadow-[0_0_34px_rgba(96,165,250,0.10)]",
   },
   emerald: {
-    badge: "border-emerald-300/20 bg-emerald-400/10 text-emerald-200",
+    badge: "border-emerald-300 bg-emerald-400/10 text-emerald-800",
     dot: "bg-emerald-400",
     line: "from-emerald-300/80 via-emerald-300/20 to-transparent",
     glow: "shadow-[0_0_34px_rgba(52,211,153,0.10)]",
@@ -40,14 +41,16 @@ export default function ProjectCard({ project, index = 1 }: ProjectCardProps) {
       viewport={{ once: true, amount: 0.15 }}
       whileHover={{ y: -4, scale: 1.002 }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      className={`panel-glow-edge relative overflow-hidden rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(10,15,28,0.94),rgba(6,10,20,0.88))] p-4 sm:p-5 lg:p-6 ${accent.glow}`}
+      className={`panel-glow-edge relative overflow-hidden rounded-4xl border border-slate-200 bg-[linear-gradient(180deg,#ffffff,#f5f9fc)] p-4 sm:p-5 lg:p-6 ${accent.glow}`}
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.04),transparent_24%),linear-gradient(180deg,rgba(255,255,255,0.02),transparent)]" />
       <div className="pointer-events-none absolute inset-x-6 top-0 h-px bg-linear-to-r from-transparent via-cyan-300/30 to-transparent" />
 
+      <ProjectVisual project={project} compact />
+
       <div className="relative z-10 flex flex-col gap-5 lg:flex-row lg:items-start">
         <div className="hidden w-18 shrink-0 lg:flex lg:flex-col lg:items-center">
-          <div className="flex h-13 w-13 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-sm font-semibold text-white">
+          <div className="flex h-13 w-13 items-center justify-center rounded-2xl border border-slate-200 bg-white/75 text-sm font-semibold text-slate-900">
             {String(index).padStart(2, "0")}
           </div>
           <div
@@ -65,33 +68,33 @@ export default function ProjectCard({ project, index = 1 }: ProjectCardProps) {
             >
               {project.category}
             </span>
-            <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] uppercase tracking-[0.24em] text-slate-400 sm:text-[11px]">
+            <span className="rounded-full border border-slate-200 bg-white/75 px-3 py-1 text-[10px] uppercase tracking-[0.24em] text-slate-500 sm:text-[11px]">
               {project.year}
             </span>
-            <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] uppercase tracking-[0.24em] text-slate-400 sm:text-[11px]">
+            <span className="rounded-full border border-slate-200 bg-white/75 px-3 py-1 text-[10px] uppercase tracking-[0.24em] text-slate-500 sm:text-[11px]">
               {project.status}
             </span>
           </div>
 
           <div className="flex flex-col gap-4 xl:flex-row xl:items-start xl:justify-between">
             <div className="min-w-0">
-              <h3 className="max-w-4xl text-xl font-semibold leading-tight text-white sm:text-2xl">
-                {project.title}
+              <h3 className="max-w-4xl text-xl font-semibold leading-tight text-slate-900 sm:text-2xl">
+                {project.shortTitle}
               </h3>
 
-              <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-300 sm:text-[15px]">
+              <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-600 sm:text-[15px]">
                 {project.tagline}
               </p>
             </div>
 
             <div className="flex shrink-0 items-center gap-3 xl:flex-col xl:items-end">
-              <div className="rounded-full border border-cyan-300/14 bg-cyan-400/8 px-3 py-1 text-[10px] uppercase tracking-[0.24em] text-cyan-200/80">
+              <div className="rounded-full border border-cyan-200 bg-cyan-400/8 px-3 py-1 text-[10px] uppercase tracking-[0.24em] text-cyan-800">
                 Dossier Active
               </div>
 
               <Link
                 href={`/projects/${project.slug}`}
-                className="shine-mask inline-flex justify-center rounded-full border border-white/10 bg-white/5 px-5 py-2.5 text-sm font-medium text-white transition duration-300 hover:border-cyan-300/25 hover:bg-white/10"
+                className="shine-mask inline-flex justify-center rounded-full border border-slate-200 bg-white/75 px-5 py-2.5 text-sm font-medium text-slate-900 transition duration-300 hover:border-cyan-300 hover:bg-slate-50"
               >
                 Open Dossier
               </Link>
@@ -99,17 +102,17 @@ export default function ProjectCard({ project, index = 1 }: ProjectCardProps) {
           </div>
 
           <div className="mt-5 grid gap-3 md:grid-cols-[1.12fr_0.88fr]">
-            <div className="rounded-3xl border border-white/8 bg-white/4 px-4 py-4">
-              <p className="text-[11px] uppercase tracking-[0.24em] text-slate-400">
+            <div className="rounded-3xl border border-slate-200 bg-white/65 px-4 py-4">
+              <p className="text-[11px] uppercase tracking-[0.24em] text-slate-500">
                 Overview
               </p>
-              <p className="mt-3 text-sm leading-7 text-slate-200">
+              <p className="mt-3 text-sm leading-7 text-slate-700">
                 {project.overview}
               </p>
             </div>
 
-            <div className="rounded-3xl border border-white/8 bg-white/4 px-4 py-4">
-              <p className="text-[11px] uppercase tracking-[0.24em] text-slate-400">
+            <div className="rounded-3xl border border-slate-200 bg-white/65 px-4 py-4">
+              <p className="text-[11px] uppercase tracking-[0.24em] text-slate-500">
                 Stack Snapshot
               </p>
 
@@ -117,13 +120,13 @@ export default function ProjectCard({ project, index = 1 }: ProjectCardProps) {
                 {project.stack.slice(0, 4).map((item) => (
                   <span
                     key={item}
-                    className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-slate-300"
+                    className="rounded-full border border-slate-200 bg-white/75 px-3 py-1.5 text-xs text-slate-600"
                   >
                     {item}
                   </span>
                 ))}
                 {project.stack.length > 4 ? (
-                  <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-slate-400">
+                  <span className="rounded-full border border-slate-200 bg-white/75 px-3 py-1.5 text-xs text-slate-500">
                     +{project.stack.length - 4} more
                   </span>
                 ) : null}
